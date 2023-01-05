@@ -1,10 +1,10 @@
-import React from 'react';
+import './Footer.css'
 
 function Footer(props) {
     return (
-        <div>
-            Footer
-        </div>
+        <footer>
+            Destiny J. FSW @ Pursuit Jan. 2023
+        </footer>
     );
 }
 
