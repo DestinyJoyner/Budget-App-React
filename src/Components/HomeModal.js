@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { ContextData } from "./Provider";
-import { handleTextChange } from "../ReusableComponents/helperFunctions";
+import { handleTextInput } from "../ReusableComponents/helperFunctions";
 import './HomeModal.css'
 
 function HomeModal() {
@@ -22,7 +22,7 @@ function HomeModal() {
         id = "initialTotal"
         type="number"
         value={total}
-        onChange={(event) => handleTextChange(event, total, setTotal)}
+        onChange={(event) => handleTextInput(event, total, setTotal)}
         />
         <button
         onClick = {() => handleButton()}
