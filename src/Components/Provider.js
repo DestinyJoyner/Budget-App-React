@@ -8,6 +8,8 @@ export const ContextData = createContext()
 function Provider({children}) {
     const API = process.env.REACT_APP_API_URL
     const [data, setData] = useState([])
+    const [total, setTotal] = useState("")
+    const [homeModal, setHomeModal] = useState(true)
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -22,6 +24,10 @@ function Provider({children}) {
         API,
         data,
         setData,
+        total,
+        setTotal,
+        homeModal,
+        setHomeModal,
        }}>
         <Nav />
         <Footer />

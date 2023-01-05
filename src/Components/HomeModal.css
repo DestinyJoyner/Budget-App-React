@@ -1,0 +1,20 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.893);
+    z-index: 1000;
+  }
+
+  .homeModal {
+    position: fixed;
+    width: 60%;
+    height: auto;
+    background-color: white;
+    border: 1px solid black;
+    color: black;
+    z-index: 1000;
+    text-align: center;
+  }
