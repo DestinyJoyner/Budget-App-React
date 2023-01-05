@@ -8,7 +8,7 @@ export const ContextData = createContext()
 function Provider({children}) {
     const API = process.env.REACT_APP_API_URL
     const [data, setData] = useState([])
-    const [total, setTotal] = useState("")
+    const [total, setTotal] = useState(5000)
     const [homeModal, setHomeModal] = useState(true)
     const navigate = useNavigate()
 
@@ -16,7 +16,6 @@ function Provider({children}) {
         axios.get(`${API}`)
         .then(respJson => setData(respJson.data) )
         .catch(err => navigate("/*"))
-        
       },[])
 
     return (
