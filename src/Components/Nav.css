@@ -9,5 +9,15 @@
     justify-items: center;
     align-items: center;
     z-index: 500;
-    background-color: orangered;
+    background-color: #85bb65;
+}
+
+nav a {
+    font-family: MoneyMoney;
+    font-size: 28px;
+    color: white ;
+}
+ 
+nav img {
+    height: 30px;
 }

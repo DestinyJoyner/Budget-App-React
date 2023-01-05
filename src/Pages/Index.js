@@ -1,10 +1,8 @@
-import React from 'react';
+import BudgetIndex from "../Components/BudgetIndex";
 
-function Index(props) {
+function Index() {
     return (
-        <div>
-            Index
-        </div>
+       <BudgetIndex />
     );
 }
 

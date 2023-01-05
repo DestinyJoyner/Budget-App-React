@@ -16,6 +16,7 @@ function Provider({children}) {
         axios.get(`${API}`)
         .then(respJson => setData(respJson.data) )
         .catch(err => navigate("/*"))
+        
       },[])
 
     return (

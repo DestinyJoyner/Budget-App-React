@@ -1,0 +1,4 @@
+@font-face {
+    font-family: "MoneyMoney";
+    src: local("MoneyMoney"), url("./Fonts/money-money.ttf") format("truetype");
+}

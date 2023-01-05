@@ -1,7 +1,9 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { ContextData } from "./Provider";
+import dollarSign from '../assets/dollarSign-lessGold.gif'
 import './Nav.css'
+
 
 function Nav() {
     const {total} = useContext(ContextData)
@@ -10,7 +12,9 @@ function Nav() {
             <Link to = "/">Home</Link>
             <Link to = "/transactions">Transactions</Link>
             <Link to = "/transactions/new">New Transaction</Link>
-            <span>Total: ${total}</span>
+            <span>
+                Total: $
+                {total}</span>
         </nav>
     );
 }
