@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react"
 import axios from 'axios';
+import RouteComponent from "./Components/RouteComponent";
 import './App.css';
 
 function App() {
@@ -12,8 +13,7 @@ function App() {
   },[])
   return (
     <div className="App">
-      <h1>Pursuit App Deployed</h1>
-      {data.length > 0 && Object.keys(data[0])}
+      <RouteComponent />
       
     </div>
   );
