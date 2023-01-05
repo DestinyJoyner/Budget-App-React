@@ -1,10 +1,17 @@
-import React from 'react';
+import { useContext } from "react";
+import { Link } from "react-router-dom";
+import { ContextData } from "./Provider";
+import './Nav.css'
 
-function Nav(props) {
+function Nav() {
+    const {total} = useContext(ContextData)
     return (
-        <div>
-            NavBar
-        </div>
+        <nav className="nav">
+            <Link to = "/">Home</Link>
+            <Link to = "/transactions">Transactions</Link>
+            <Link to = "/transactions/new">New Transaction</Link>
+            <span>Total: ${total}</span>
+        </nav>
     );
 }
 
