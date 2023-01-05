@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Form from "../ReusableComponents/Form";
+import './BudgetNew.css'
 
 function BudgetNew(props) {
     const [newTransaction, setNewTransaction] = useState({
@@ -10,12 +11,16 @@ function BudgetNew(props) {
         category: "",
     })
 
+    const [type, setType] = useState("") 
+
     return (
         <div className='new'>
             <h1>Add A New Transaction</h1>
             <Form
             stateVar={newTransaction}
-            setFunction={setNewTransaction} />
+            setFunction={setNewTransaction}
+            type={type}
+            setType={setType} />
         </div>
     );
 }
