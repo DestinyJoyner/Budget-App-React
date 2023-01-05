@@ -12,7 +12,7 @@ function App() {
   },[])
   return (
     <div className="App">
-      <h1>Pursuit App Template</h1>
+      <h1>Pursuit App Deployed</h1>
       {data.length > 0 && Object.keys(data[0])}
       
     </div>
