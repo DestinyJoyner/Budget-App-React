@@ -3,13 +3,14 @@ import TextInput from "./TextInput";
 import NumberInput from "./NumberInput";
 import DateInput from "./DateInput";
 import RadioButton from "./RadioButton";
+import DataList from "./DataList";
 
 
 function Form({stateVar, setFunction, type, setType}) {
     
 
     return (
-        <form className="form">
+        <>
             <TextInput 
             value = {"itemName"}
             stateVar={stateVar}
@@ -46,9 +47,14 @@ function Form({stateVar, setFunction, type, setType}) {
 
             </section>
 
+            <DataList 
+            value = {"category"}
+            stateVar={stateVar}
+            setFunction={setFunction}
+            />
 
-
-        </form>
+            
+        </>
     );
 }
 

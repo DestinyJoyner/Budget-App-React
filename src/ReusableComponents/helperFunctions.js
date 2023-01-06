@@ -20,10 +20,7 @@ function handleNumberInput(e, stateVar, setFunction) {
 function handleRadioInput(e, stateVar, setFunction, checkVar, setCheckFunction){
     let value = e.target.value
     const id = e.target.id
-    if(value === "true") value = true
-    if(value === "false") value = false
-    setCheckFunction(!value)
-    setFunction({...stateVar, [id]: !value})
+    
 }
 
 // string in this format -> "2023-01-10"

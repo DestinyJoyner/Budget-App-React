@@ -16,11 +16,14 @@ function BudgetNew(props) {
     return (
         <div className='new'>
             <h1>Add A New Transaction</h1>
-            <Form
-            stateVar={newTransaction}
-            setFunction={setNewTransaction}
-            type={type}
-            setType={setType} />
+            <form 
+            className="form">
+                <Form
+                stateVar={newTransaction}
+                setFunction={setNewTransaction}
+                type={type}
+                setType={setType} />
+            </form>
         </div>
     );
 }
