@@ -14,7 +14,7 @@ function RouteComponent() {
             <Route path = "transactions">
                 <Route index element = {<Index />} />
                 <Route path = "new" element = {<New />} />
-                <Route path = ":index">
+                <Route path = ":id">
                     <Route index element = {<Show />} />
                     <Route path = "edit" element = {<Edit />} />
                 </Route>
