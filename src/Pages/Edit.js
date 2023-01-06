@@ -1,10 +1,8 @@
-import React from 'react';
+import BudgetEdit from "../Components/BudgetEdit";
 
-function Edit(props) {
+function Edit() {
     return (
-        <div>
-            Edit
-        </div>
+        <BudgetEdit />
     );
 }
 

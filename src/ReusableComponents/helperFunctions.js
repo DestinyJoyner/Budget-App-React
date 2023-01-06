@@ -17,10 +17,9 @@ function handleNumberInput(e, stateVar, setFunction) {
     setFunction({...stateVar, [id]:value})
 }
 
-function handleRadioInput(e, stateVar, setFunction, checkVar, setCheckFunction){
-    let value = e.target.value
-    const id = e.target.id
-    
+// function when submitting form to adjust amount (positive/ negative)
+function convertObjValues(obj, stateVar) {
+    if(stateVar === "expense") obj.amount = -Math.abs(obj.amount)
 }
 
 // string in this format -> "2023-01-10"
@@ -34,6 +33,6 @@ function convertDate(str) {
 export {
     handleTextInput,
     handleNumberInput,
-    handleRadioInput,
+    convertObjValues,
     convertDate,
 }

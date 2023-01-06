@@ -15,9 +15,11 @@ function BudgetIndex() {
     arr.forEach(({id, amount}) => {
         if(id) sum += amount
     })
+    
     setFunction(sum)
-    setFunction2(initValue - sum)
+    setFunction2(initValue + sum)
    }
+
     useEffect(() => {
        axios.get(`${API}`)
        .then(respJson => {
@@ -44,7 +46,8 @@ function BudgetIndex() {
                             key = {id}
                             date={date}
                             itemName={itemName}
-                            amount={amount} />
+                            amount={amount}
+                            id={id} />
                         }
                     })
                 }

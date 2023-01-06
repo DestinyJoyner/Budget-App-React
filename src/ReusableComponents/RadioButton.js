@@ -9,6 +9,7 @@ function RadioButton({value, stateVar, setFunction}) {
         type="radio"
         id={value}
         name="transactionType"
+        checked={stateVar === value ? true : false}
         value={value}
         onChange={(event) => setFunction(event.target.value)}
          />

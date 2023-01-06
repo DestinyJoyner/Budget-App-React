@@ -9,7 +9,7 @@ import './BudgetNew.css'
 function BudgetNew() {
     const {API, axios} = useContext(ContextData)
     const navigate = useNavigate()
-    
+
     const [newTransaction, setNewTransaction] = useState({
         itemName : "",
         amount: "",
@@ -22,7 +22,7 @@ function BudgetNew() {
     function convertObjValues(obj, stateVar) {
         if(stateVar === "expense") obj.amount = -Math.abs(obj.amount)
 
-        obj.date = convertDate(obj.date)
+        // obj.date = convertDate(obj.date)
     }
 
     function handleSubmit(e) {

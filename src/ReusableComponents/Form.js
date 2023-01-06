@@ -3,6 +3,7 @@ import NumberInput from "./NumberInput";
 import DateInput from "./DateInput";
 import RadioButton from "./RadioButton";
 import DataList from "./DataList";
+import "./Form.css"
 
 function Form({stateVar, setFunction, type, setType}) {
     

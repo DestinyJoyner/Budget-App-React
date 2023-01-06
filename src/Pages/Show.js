@@ -1,10 +1,8 @@
-import React from 'react';
+import BudgetShow from "../Components/BudgetShow";
 
 function Show(props) {
     return (
-        <div>
-            Show
-        </div>
+        <BudgetShow />
     );
 }
 
