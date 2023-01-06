@@ -1,6 +1,6 @@
 import BudgetShow from "../Components/BudgetShow";
 
-function Show(props) {
+function Show() {
     return (
         <BudgetShow />
     );
