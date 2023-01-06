@@ -8,7 +8,7 @@ export const ContextData = createContext()
 function Provider({children}) {
     const API = process.env.REACT_APP_API_URL
     const [data, setData] = useState([])
-    const [total, setTotal] = useState(5000)
+    const [originalTotal, setOriginalTotal] = useState(5000)
     const [homeModal, setHomeModal] = useState(true)
     const navigate = useNavigate()
 
@@ -24,8 +24,8 @@ function Provider({children}) {
         API,
         data,
         setData,
-        total,
-        setTotal,
+        originalTotal,
+        setOriginalTotal,
         homeModal,
         setHomeModal,
        }}>

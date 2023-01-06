@@ -4,22 +4,31 @@ import './BudgetIndex.css'
 import BudgetIndexDisplay from "./BudgetIndexDisplay";
 
 function BudgetIndex() {
-    const {total, setTotal, data, setData} = useContext(ContextData)
+    const {axios, API, originalTotal, setOriginalTotal, data, setData} = useContext(ContextData)
+    const [currentTotal, setCurrentTotal] = useState(originalTotal)
     const [transactionTotal, setTransactionTotal] = useState(0)
     
+   function updateTotal(initValue, arr, setFunction, setFunction2) {
+    let sum = 0
+    arr.forEach(({id, amount}) => {
+        if(id) sum += amount
+    })
+    console.log(sum)
+    setFunction(sum)
+    setFunction2(initValue - sum)
+   }
     useEffect(() => {
-        let sum = 0
-        data.forEach(({id, amount}) => {
-            if(id) sum += amount
-        })
-        setTransactionTotal(sum)
-        setTotal(total - sum)
+       axios.get(`${API}`)
+       .then(respJson => {
+        setData(respJson.data)
+        updateTotal(originalTotal, respJson.data, setTransactionTotal, setCurrentTotal)
+       })
     }, [])
 
 
     return (
         <div className="index">
-            <h1>Money In the Bank: ${total}</h1>
+            <h1>Money In the Bank: ${currentTotal}</h1>
             <section className="listedTransactions">
                 <div className="transactionTitles">
                     <p>Date</p>
