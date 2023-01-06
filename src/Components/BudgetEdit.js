@@ -16,7 +16,6 @@ function BudgetEdit() {
         .then(respJson => {
             setEditTransaction(respJson.data)
             if(respJson.data.amount < 0){
-                console.log(respJson.data.amount)
                 setType("expense")
                 setEditTransaction({...respJson.data, amount: Math.abs(respJson.data.amount)})
             }
@@ -26,10 +25,11 @@ function BudgetEdit() {
         })
         .catch(err => navigate("/*"))
     },[id])
+
     return (
         <div className="edit">
             <h1>Edit Previous Transaction</h1>
-            <form>
+            <form className="form">
            {
             editTransaction.itemName && 
             <Form
