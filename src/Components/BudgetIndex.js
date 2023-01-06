@@ -16,7 +16,7 @@ function BudgetIndex() {
         if(id) sum += amount
     })
     setFunction(sum)
-    setFunction2(initValue - sum)
+    setFunction2(initValue - Math.abs(sum))
    }
     useEffect(() => {
        axios.get(`${API}`)
@@ -44,7 +44,8 @@ function BudgetIndex() {
                             key = {id}
                             date={date}
                             itemName={itemName}
-                            amount={amount} />
+                            amount={amount}
+                            id={id} />
                         }
                     })
                 }

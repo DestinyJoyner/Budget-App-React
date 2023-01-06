@@ -1,6 +1,7 @@
 import { useState, useContext, useEffect } from "react";
 import { ContextData } from "./Provider";
 import { useNavigate, useParams } from "react-router-dom";
+import Form from "../ReusableComponents/Form";
 
 
 function BudgetEdit() {
@@ -15,6 +16,7 @@ function BudgetEdit() {
         .then(respJson => {
             setEditTransaction(respJson.data)
             if(respJson.data.amount < 0){
+                console.log(respJson.data.amount)
                 setType("expense")
                 setEditTransaction({...respJson.data, amount: Math.abs(respJson.data.amount)})
             }
@@ -23,7 +25,7 @@ function BudgetEdit() {
             }
         })
         .catch(err => navigate("/*"))
-    },[])
+    },[id])
     return (
         <div className="edit">
             <h1>Edit Previous Transaction</h1>
