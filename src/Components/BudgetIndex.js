@@ -4,6 +4,7 @@ import { ContextData } from "./Provider";
 import './BudgetIndex.css'
 import BudgetIndexDisplay from "./BudgetIndexDisplay";
 
+
 function BudgetIndex() {
     const {axios, API, originalTotal, setOriginalTotal, data, setData} = useContext(ContextData)
     const navigate = useNavigate()
