@@ -9,7 +9,7 @@ function Provider({children}) {
     const API = process.env.REACT_APP_API_URL
     const [data, setData] = useState([])
     const [originalTotal, setOriginalTotal] = useState(5000)
-    const [homeModal, setHomeModal] = useState(true)
+    const [homeModal, setHomeModal] = useState(false)
     const navigate = useNavigate()
 
     useEffect(() => {

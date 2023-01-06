@@ -15,13 +15,9 @@ function BudgetIndex() {
     arr.forEach(({id, amount}) => {
         if(id) sum += amount
     })
+    
     setFunction(sum)
-    if(Math.abs(sum) > initValue){
-        setFunction2(initValue + Math.abs(sum))
-    }
-    else{
-        setFunction2(initValue - Math.abs(sum))
-    }
+    setFunction2(initValue + sum)
    }
 
     useEffect(() => {
