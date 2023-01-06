@@ -2,6 +2,7 @@ import { useState, useContext, useEffect } from "react";
 import { ContextData } from "./Provider";
 import { useNavigate, useParams } from "react-router-dom";
 import Form from "../ReusableComponents/Form";
+import { convertObjValues } from "../ReusableComponents/helperFunctions";
 
 
 function BudgetEdit() {
@@ -10,6 +11,15 @@ function BudgetEdit() {
     const {id} = useParams()
     const [type, setType] = useState("")
     const [editTransaction, setEditTransaction] = useState({})
+
+    function handleSubmit(e) {
+    e.preventDefault()
+    convertObjValues(editTransaction, type)
+
+    axios.put(`${API}/${id}`, editTransaction)
+    .then(() => navigate(`/transactions/${id}`))
+    .catch(err => navigate("/*"))
+    }
 
     useEffect(() => {
         axios.get(`${API}/${id}`)
@@ -29,7 +39,9 @@ function BudgetEdit() {
     return (
         <div className="edit">
             <h1>Edit Previous Transaction</h1>
-            <form className="form">
+            <form 
+            className="form"
+            onSubmit={(event) => handleSubmit(event)}>
            {
             editTransaction.itemName && 
             <Form

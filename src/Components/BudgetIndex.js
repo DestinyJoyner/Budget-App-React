@@ -16,8 +16,14 @@ function BudgetIndex() {
         if(id) sum += amount
     })
     setFunction(sum)
-    setFunction2(initValue - Math.abs(sum))
+    if(Math.abs(sum) > initValue){
+        setFunction2(initValue + Math.abs(sum))
+    }
+    else{
+        setFunction2(initValue - Math.abs(sum))
+    }
    }
+
     useEffect(() => {
        axios.get(`${API}`)
        .then(respJson => {
