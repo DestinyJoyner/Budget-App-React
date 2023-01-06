@@ -1,14 +1,11 @@
-
 import TextInput from "./TextInput";
 import NumberInput from "./NumberInput";
 import DateInput from "./DateInput";
 import RadioButton from "./RadioButton";
 import DataList from "./DataList";
 
-
 function Form({stateVar, setFunction, type, setType}) {
     
-
     return (
         <>
             <TextInput 
@@ -52,6 +49,10 @@ function Form({stateVar, setFunction, type, setType}) {
             stateVar={stateVar}
             setFunction={setFunction}
             />
+
+            <input
+            className="submitButton"
+            type="submit" />
 
             
         </>

@@ -1,8 +1,13 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { ContextData } from "./Provider";
 import Form from "../ReusableComponents/Form";
+import { convertDate } from "../ReusableComponents/helperFunctions";
 import './BudgetNew.css'
 
-function BudgetNew(props) {
+function BudgetNew() {
+    const {API, axios} = useContext(ContextData)
+    const navigate = useNavigate()
     const [newTransaction, setNewTransaction] = useState({
         itemName : "",
         amount: "",
@@ -10,14 +15,29 @@ function BudgetNew(props) {
         from: "",
         category: "",
     })
+    const [type, setType] = useState("")
 
-    const [type, setType] = useState("") 
+    function convertObjValues(obj, stateVar) {
+        if(stateVar === "expense") obj.amount = -Math.abs(obj.amount)
+
+        obj.date = convertDate(obj.date)
+    }
+
+    function handleSubmit(e) {
+        e.preventDefault()
+        convertObjValues(newTransaction, type)
+
+        axios.post(`${API}`, newTransaction)
+        .then(() => navigate("/transactions"))
+        .catch(err => navigate("/*"))
+    }
 
     return (
         <div className='new'>
             <h1>Add A New Transaction</h1>
             <form 
-            className="form">
+            className="form"
+            onSubmit={(event) => handleSubmit(event)}>
                 <Form
                 stateVar={newTransaction}
                 setFunction={setNewTransaction}
