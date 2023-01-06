@@ -6,15 +6,15 @@ import './Nav.css'
 
 
 function Nav() {
-    const {total} = useContext(ContextData)
+    const {originalTotal} = useContext(ContextData)
     return (
         <nav className="nav">
             <Link to = "/">Home</Link>
             <Link to = "/transactions">Transactions</Link>
             <Link to = "/transactions/new">New Transaction</Link>
             <span>
-                Total: $
-                {total}</span>
+                Starting Budget: $
+                {originalTotal}</span>
         </nav>
     );
 }
