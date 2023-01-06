@@ -1,19 +1,39 @@
 
-function handleTextChange(e, stateVar, setFunction) {
+function handleTextInput(e, stateVar, setFunction) {
     let value = e.target.value
     const id = e.target.id
     if(id === "initialTotal"){
-        console.log(`id`)
         value = +e.target.value
         setFunction(value)
     }
     else{
         setFunction({...stateVar, [id]:value})
-    }
-    
-
+    }   
 }
 
+function handleNumberInput(e, stateVar, setFunction) {
+    const value = +e.target.value
+    const id = e.target.id
+    setFunction({...stateVar, [id]:value})
+}
+
+function handleRadioInput(e, stateVar, setFunction, checkVar, setCheckFunction){
+    let value = e.target.value
+    const id = e.target.id
+    
+}
+
+// string in this format -> "2023-01-10"
+function convertDate(str) {
+    let date = str.slice(2, 10).split("-");
+    date.push(date[0]);
+    date.shift();
+    return date.join("/");
+  }
+
 export {
-    handleTextChange,
+    handleTextInput,
+    handleNumberInput,
+    handleRadioInput,
+    convertDate,
 }

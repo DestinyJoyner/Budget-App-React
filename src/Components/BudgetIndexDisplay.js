@@ -5,7 +5,7 @@ function BudgetIndexDisplay({date, itemName, amount}) {
         <div className="transaction">
             <p>{date}</p>
             <p>{itemName}</p>
-            <p>- ${amount}</p>
+            <p>${amount}</p>
         </div>
     );
 }

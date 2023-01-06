@@ -1,10 +1,8 @@
-import React from 'react';
+import BudgetNew from "../Components/BudgetNew";
 
 function New(props) {
     return (
-        <div>
-            New
-        </div>
+        <BudgetNew />
     );
 }
 
