@@ -1,10 +1,12 @@
 import { useContext, useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { ContextData } from "./Provider";
 import './BudgetIndex.css'
 import BudgetIndexDisplay from "./BudgetIndexDisplay";
 
 function BudgetIndex() {
     const {axios, API, originalTotal, setOriginalTotal, data, setData} = useContext(ContextData)
+    const navigate = useNavigate()
     const [currentTotal, setCurrentTotal] = useState(originalTotal)
     const [transactionTotal, setTransactionTotal] = useState(0)
     
@@ -13,7 +15,6 @@ function BudgetIndex() {
     arr.forEach(({id, amount}) => {
         if(id) sum += amount
     })
-    console.log(sum)
     setFunction(sum)
     setFunction2(initValue - sum)
    }
@@ -23,8 +24,8 @@ function BudgetIndex() {
         setData(respJson.data)
         updateTotal(originalTotal, respJson.data, setTransactionTotal, setCurrentTotal)
        })
+       .catch(err => navigate("/*"))
     }, [])
-
 
     return (
         <div className="index">

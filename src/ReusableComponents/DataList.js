@@ -3,7 +3,7 @@ import { handleTextInput } from "./helperFunctions";
 function DataList({value, stateVar, setFunction}) {
 
     return (
-        <label for={value}>{value}
+        <label htmlFor={value}>{value}
         <input 
         list="dataList"
         id={value} 
