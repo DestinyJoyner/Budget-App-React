@@ -32,9 +32,10 @@ function BudgetIndex() {
 
     return (
         <div className="index">
-            <h1>Money In the Bank: ${currentTotal}</h1>
+            <h1>Current Balance: ${currentTotal.toFixed(2)}</h1>
             <section className="listedTransactions">
                 <div className="transactionTitles">
+                    <p>{""}</p>
                     <p>Date</p>
                     <p>Item</p>
                     <p>Amount</p>
