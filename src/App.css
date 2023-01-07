@@ -1,6 +1,14 @@
 
+.App {
+    background-image: url('/public/treasury-background.jpg.webp');
+    background-size: cover;
+    width: 100vw;
+    min-height: 100vh;
+    max-height: auto;
+}
+
 .index, .new, .show{
-    margin-top: 70px;
+    margin-top: 60px;
     padding: 10px;
     width: 80%;
     margin-left: auto;

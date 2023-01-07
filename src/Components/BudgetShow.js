@@ -45,7 +45,7 @@ function BudgetShow() {
                     
                     <p className="amount">$
                         <span>
-                            {Math.abs(thisTransaction.amount)}</span>
+                            {Math.abs(thisTransaction.amount).toFixed(2)}</span>
                     </p>
                    
                     <div className="transac-data">
