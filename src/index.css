@@ -6,3 +6,5 @@
     font-family: "Checkbook";
     src: local("Checkbook"), url("./Fonts/checkbook.TTF") format("truetype");
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script')
