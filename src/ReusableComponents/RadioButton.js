@@ -11,8 +11,9 @@ function RadioButton({value, stateVar, setFunction}) {
         checked={stateVar === value ? true : false}
         value={value}
         onChange={(event) => setFunction(event.target.value)}
+        required
          />
-        {convertInput(value)}: {" "}
+         {" "}{convertInput(value)}
     </label>
     );
 }
