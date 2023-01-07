@@ -3,8 +3,8 @@ import { useParams, useNavigate } from "react-router-dom";
 import { ContextData } from "./Provider";
 import { convertDate } from "../ReusableComponents/helperFunctions";
 import { toWords } from "number-to-words";
-import income from "../assets/income.png"
-import expense from "../assets/expense.png"
+import expense from "../assets/decrease-arrow.png"
+import income from "../assets/increase-arrow.png"
 import "./BudgetShow.css"
 
 
@@ -28,9 +28,9 @@ function BudgetShow() {
                 <div className="transacDetails">
                     <h3>Receipt</h3>
 
-                    {/* <img 
+                    <img 
                     src={thisTransaction.amount > 0 ? income : expense} 
-                    alt = "income-expense"/> */}
+                    alt = "income-expense"/>
 
                     <p className="date">Date: 
                         <span>

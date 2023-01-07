@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { ContextData } from "./Provider";
-import dollarSign from '../assets/dollarSign-lessGold.gif'
 import './Nav.css'
 
 
