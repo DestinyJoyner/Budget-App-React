@@ -1,10 +1,9 @@
-import { handleRadioInput } from "./helperFunctions";
-import { useState } from "react";
+import { convertInput } from "./helperFunctions";
 
 function RadioButton({value, stateVar, setFunction}) {
     
     return (
-        <label htmlFor={value}>{value}
+        <label htmlFor={value}>
         <input
         type="radio"
         id={value}
@@ -13,6 +12,7 @@ function RadioButton({value, stateVar, setFunction}) {
         value={value}
         onChange={(event) => setFunction(event.target.value)}
          />
+        {convertInput(value)}: {" "}
     </label>
     );
 }

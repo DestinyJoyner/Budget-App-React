@@ -1,5 +1,22 @@
 .form {
+    border: 2px solid black;
     display: grid;
     grid-template-rows: auto;
     row-gap: 20px;
+
+    background-image: url('/public/blue-check.jpeg');
+    background-size: cover;
+    padding: 20px;
+}
+
+.form label {
+    color: #16143d;
+    font-size: 24px;
+}
+
+.form input[type="submit"] {
+    width: 30%;
+    height: 30px;
+    margin-right: auto;
+    margin-left: auto;
 }

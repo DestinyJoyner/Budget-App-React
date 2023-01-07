@@ -1,8 +1,8 @@
-import { handleNumberInput } from "./helperFunctions";
+import { handleNumberInput, convertInput } from "./helperFunctions";
 
 function NumberInput({value, stateVar, setFunction}) {
     return (
-        <label htmlFor={value}>{value}
+        <label htmlFor={value}>{convertInput(value)}: {" "}
         <input
         type="number"
         id={value}

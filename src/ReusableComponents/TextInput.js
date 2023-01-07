@@ -1,9 +1,9 @@
-import { handleTextInput } from "./helperFunctions";
+import { handleTextInput, convertInput } from "./helperFunctions";
 
 function TextInput({value, stateVar, setFunction}) {
-    const labelTitle = value === "itemName" ? "transaction name" : value
+    const labelTitle = value === "itemName" ? "transaction Name" : value
     return (
-        <label htmlFor={value}>{labelTitle}
+        <label htmlFor={value}>{convertInput(labelTitle)}: {" "}
             <input
             type="text"
             id={value}
