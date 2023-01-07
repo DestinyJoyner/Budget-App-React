@@ -3,21 +3,43 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 70px;
+    height: 60px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: .25fr repeat(3, 1fr) .8fr;
     justify-items: center;
     align-items: center;
     z-index: 500;
-    background-color: #85bb65;
+    /* background-color: #85bb65; */
+    background-color: #236a73;
 }
 
 nav a {
     font-family: MoneyMoney;
-    font-size: 28px;
+    font-size: 24px;
     color: white ;
 }
  
 nav img {
     height: 30px;
 }
+
+.nav div {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: .7fr 1fr;
+    justify-items: center;
+}
+
+.nav div img {
+    justify-self: right;
+    margin-right: 4px;
+}
+
+.navSpan {
+    grid-column: 1/3;
+}
+.navTotal {
+    align-self: center;
+    justify-self: left;
+}
+
