@@ -2,3 +2,7 @@
     font-family: "MoneyMoney";
     src: local("MoneyMoney"), url("./Fonts/money-money.ttf") format("truetype");
 }
+@font-face {
+    font-family: "Checkbook";
+    src: local("Checkbook"), url("./Fonts/checkbook.TTF") format("truetype");
+}
