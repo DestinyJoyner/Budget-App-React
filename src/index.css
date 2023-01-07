@@ -10,5 +10,9 @@
     font-family: "Bank";
     src: local("Bank"), url("./Fonts/bank.ttf") format("truetype");
 }
+@font-face {
+    font-family: "Banknote";
+    src: local("Banknote"), url("./Fonts/banknote.ttf") format("truetype");
+}
 
 @import url('https://fonts.googleapis.com/css2?family=Pinyon+Script')
