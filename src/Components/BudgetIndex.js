@@ -1,8 +1,10 @@
 import { useContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { ContextData } from "./Provider";
-import './BudgetIndex.css'
 import BudgetIndexDisplay from "./BudgetIndexDisplay";
+import barcode from"../assets/barcode.png"
+import './BudgetIndex.css'
+
 
 
 function BudgetIndex() {
@@ -32,9 +34,10 @@ function BudgetIndex() {
 
     return (
         <div className="index">
-            <h1>Money In the Bank: ${currentTotal}</h1>
             <section className="listedTransactions">
+                <h1>Current Balance: ${currentTotal.toFixed(2)}</h1>
                 <div className="transactionTitles">
+                    <p>{""}</p>
                     <p>Date</p>
                     <p>Item</p>
                     <p>Amount</p>
@@ -52,6 +55,7 @@ function BudgetIndex() {
                         }
                     })
                 }
+                <img src={barcode} alt="barcode" className="barcode" />
             </section>
         </div>
     );
