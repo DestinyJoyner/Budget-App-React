@@ -8,7 +8,8 @@ function BudgetIndexDisplay({date, itemName, amount, id}) {
             <img src={payment} alt="wallet-icon" />
             <p>{convertDate(date)}</p>
             <Link to={`/transactions/${id}`}><p>{itemName}</p></Link>
-            <p>${amount.toFixed(2)}</p>
+            <p
+            style={{color: amount < 0 ? "red" : "green"}}>{amount < 0 ? "- " : ''}${Math.abs(amount).toFixed(2)}</p>
         </div>
     );
 }
