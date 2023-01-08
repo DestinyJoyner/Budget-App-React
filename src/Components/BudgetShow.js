@@ -1,10 +1,11 @@
 import { useState, useEffect, useContext } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import { ContextData } from "./Provider";
 import { convertDate } from "../ReusableComponents/helperFunctions";
 import { toWords } from "number-to-words";
 import expense from "../assets/decrease-arrow.png"
 import income from "../assets/increase-arrow.png"
+import pursuitLogo from "../assets/pursuit-logo.png"
 import "./BudgetShow.css"
 
 
@@ -26,7 +27,10 @@ function BudgetShow() {
             {
                 Object.keys(thisTransaction).length &&
                 <div className="transacDetails">
-                    <h3>Receipt</h3>
+                    <div className ="pursuit-info">
+                        <img src={pursuitLogo} alt="pursuit-log"/>
+                        <p>47-10 Austell Pl <br></br>2nd floor, <br></br>Long Island City, NY 11101</p>
+                    </div>
 
                     <img 
                     src={thisTransaction.amount > 0 ? income : expense} 
@@ -72,6 +76,9 @@ function BudgetShow() {
                     
                 </div>
             }
+            <Link to={`/transactions/${id}/edit`}>
+                <button>Edit</button>
+            </Link>
         </div>
     );
 }

@@ -1,4 +1,6 @@
-
+.show {
+    width: 80%;
+}
 .transacDetails {
     border: 1px solid black;
     border-radius: 10px;
@@ -15,12 +17,23 @@
     background-size: cover;
 }
 
-.transacDetails h3 {
-    font-size: 50px;
-    margin: 0;
+.transacDetails .pursuit-info{
     grid-column: 1;
     grid-row: 1;
+    align-self:flex-start;
+    text-align: left;
+    margin-left: 10px;
     font-family: 'Pinyon Script', cursive;
+    width: fit-content;
+    display: block;  
+}
+.transacDetails .pursuit-info img {
+    padding: 0;
+    height: 40px;
+}
+.transacDetails .pursuit-info p {
+    font-size: 13px;
+    margin: 0;
 }
 
 .transacDetails img {

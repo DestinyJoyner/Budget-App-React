@@ -8,11 +8,15 @@
     padding: 20px;
     box-shadow: 8px 10px #16143d;
 }
-
+/* 
+Montserrat. Monstserrat. ...
+Source Sans Pro. Source Sans Pro. ...
+Raleway. Raleway.
+*/
 .form label {
     color: #16143d;
     font-size: 26px;
-    font-family: sans-serif ;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .form input {

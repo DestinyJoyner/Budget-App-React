@@ -42,7 +42,6 @@ function Form({stateVar, setFunction, type, setType}) {
                 stateVar={type}
                 setFunction={setType}
                 />
-
             </section>
 
             <DataList 
