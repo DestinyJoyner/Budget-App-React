@@ -20,8 +20,8 @@ function BudgetDeleteModal(props) {
         // axios.delete(`${API}/${deleteId}`)
         // .then((respJson) => {
         //     console.log(respJson.data)
-        //     // setDeleteModal(false)
-        //     // navigate(`/transactions`)
+        //     setDeleteModal(false)
+        //     navigate(`/transactions`)
         // })
         // .catch(err => console.log(err))
     }
