@@ -6,6 +6,9 @@ import { toWords } from "number-to-words";
 import expense from "../assets/decrease-arrow.png"
 import income from "../assets/increase-arrow.png"
 import pursuitLogo from "../assets/pursuit-logo.png"
+import edit from "../assets/edit-icon.png"
+import back from "../assets/return-arrow.png"
+import remove from "../assets/delete-icon.png"
 import "./BudgetShow.css"
 
 
@@ -23,7 +26,28 @@ function BudgetShow() {
 
     return (
         <div className='show'>
-            <h1>Transaction</h1>
+            <section className="show-header">
+                <div className="circles">
+                <Link to={`/transactions/`}>
+                        <div className="circle1">
+                            <img src={back} alt="go-back" className="go-back" />
+                        </div>
+                    </Link>
+                    <hr></hr>
+                   <Link to={`/transactions/${id}/edit`}>
+                        <div className="circle1">
+                            <img src={edit} alt="edit" />
+                        </div>
+                    </Link>
+                    <hr></hr>
+                    <button 
+                    className="circle1">
+                        <img src={remove} alt="remove" className="remove" />
+                    </button>
+                </div>
+
+            </section>
+            
             {
                 Object.keys(thisTransaction).length &&
                 <div className="transacDetails">
@@ -53,7 +77,7 @@ function BudgetShow() {
                     </p>
                    
                     <div className="transac-data">
-                    <p>In the Amount of:
+                    <p>In the <br></br> Amount of:
                         <span>
                             {toWords(Math.abs(thisTransaction.amount))}
                         </span> Dollars
@@ -76,9 +100,6 @@ function BudgetShow() {
                     
                 </div>
             }
-            <Link to={`/transactions/${id}/edit`}>
-                <button>Edit</button>
-            </Link>
         </div>
     );
 }
