@@ -24,16 +24,13 @@ function BudgetIndex() {
    }
 
     useEffect(() => {
-        console.log(`on index page`)
        axios.get(`${API}`)
        .then(respJson => {
         setData(respJson.data)
         updateTotal(originalTotal, respJson.data, setTransactionTotal, setCurrentTotal)
        })
-       .catch(err =>{
-        console.log(`index pg req error`)
-        navigate("/*")
-    })
+       .catch(err => navigate("/*")
+    )
     }, [])
 
     return (

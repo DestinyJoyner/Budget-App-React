@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState} from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Nav from './Nav'
@@ -15,11 +15,6 @@ function Provider({children}) {
     const [deleteModal, setDeleteModal] = useState(false)
     const navigate = useNavigate()
 
-    // useEffect(() => {
-    //     axios.get(`${API}`)
-    //     .then(respJson => setData(respJson.data) )
-    //     .catch(err => navigate("/*"))
-    //   },[])
 
     return (
        <ContextData.Provider value = {{

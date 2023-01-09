@@ -15,37 +15,16 @@ function BudgetDeleteModal(props) {
     }
 
     function deleteTransaction() {
-        console.log(`clicked check`)
-        // axios.delete(`http://localhost:4562/transactions/${deleteId}`, {
-        //     headers: {
-        //       'Content-Type': 'application/json',
-        //     }
-        //   })
-        // .then(() => {
-        //     setDeleteId("")
-        //     setDeleteModal(false)
-        //     navigate(`/transactions`)
-        // })
-        // .catch(err => {
-        //     console.log(err)
-        //     console.log(`delete req err`)
-        // })
-        
         axios.delete(`${API}/${deleteId}`, {
             headers: {
               'Content-Type': 'application/json',
             }
           })
-        .then((respJson) => {
-            console.log(respJson.data)
-            setDeleteId("")
+        .then(() => {
             setDeleteModal(false)
             navigate(`/transactions`)
         })
-        .catch(err => {
-            console.log(err)
-            console.log(`delete req err`)
-        })
+        .catch(err => navigate("/*"))
     }
 
     return (
