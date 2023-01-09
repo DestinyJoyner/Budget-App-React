@@ -1,0 +1,28 @@
+.edit .form h1 {
+    color: #570116;
+}
+
+.edit a {
+    align-self: center;
+    height: fit-content;
+}
+
+.edit .form {
+    background-image: url('/public/red-check.png');
+    background-size: cover;
+    border: 2px solid #570116;
+    box-shadow: 8px 10px #570116;
+    text-align: center;
+}
+
+.edit .form label {
+    color: #570116;
+}
+
+.edit .form .radioButtons {
+    background-color: #570116;
+    border-color: #570116;
+}
+.edit .form .radioButtons label {
+    color: white;
+}

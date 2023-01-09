@@ -1,6 +1,7 @@
 import { useState, useEffect, useContext } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { ContextData } from "./Provider";
+import BackButton from "../ReusableComponents/BackButton";
 import { convertDate } from "../ReusableComponents/helperFunctions";
 import { toWords } from "number-to-words";
 import expense from "../assets/decrease-arrow.png"
@@ -28,13 +29,11 @@ function BudgetShow() {
         <div className='show'>
             <section className="show-header">
                 <div className="circles">
-                <Link to={`/transactions/`}>
-                        <div className="circle1">
-                            <img src={back} alt="go-back" className="go-back" />
-                        </div>
+                    <Link to={`/transactions/`}>
+                       <BackButton color={`#236a73`} />
                     </Link>
                     <hr></hr>
-                   <Link to={`/transactions/${id}/edit`}>
+                    <Link to={`/transactions/${id}/edit`}>
                         <div className="circle1">
                             <img src={edit} alt="edit" />
                         </div>

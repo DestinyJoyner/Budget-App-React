@@ -1,4 +1,5 @@
 .form {
+    grid-column: 2;
     border: 2px solid black;
     display: grid;
     grid-template-rows: auto;
@@ -7,16 +8,22 @@
     background-size: cover;
     padding: 20px;
     box-shadow: 8px 10px #16143d;
+    width: 90%;
 }
-/* 
-Montserrat. Monstserrat. ...
-Source Sans Pro. Source Sans Pro. ...
-Raleway. Raleway.
-*/
+
+.form h1 {
+    font-family: monospace;
+    font-size: 40px;
+    margin: 0;
+    margin-bottom: 10px;
+    text-decoration: underline;
+    color: #16143d;
+}
+
 .form label {
     color: #16143d;
     font-size: 26px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: monospace;
 }
 
 .form input {

@@ -7,12 +7,18 @@
     max-height: auto;
 }
 
-.index, .new, .show{
+.index, .new, .show, .edit{
     margin-top: 60px;
-    padding: 10px 10px;
+    padding: 10px ;
     /* width: 70%; */
     margin-left: auto;
     margin-right: auto;
-    text-align: center;
-    
+    text-align: center;  
+}
+
+.edit, .new {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: .1fr 1fr .1fr;
+    grid-template-rows: 1fr;
 }
