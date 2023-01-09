@@ -4,9 +4,10 @@ import { useNavigate } from "react-router-dom";
 import check from "../assets/checkmark.png"
 import close from "../assets/close-x.png"
 import "./BudgetDeleteModal.css"
+import axios from "axios";
 
 function BudgetDeleteModal(props) {
-    const {axios, API, deleteId, setDeleteModal} = useContext(ContextData)
+    const { API, deleteId, setDeleteModal, setDeleteId} = useContext(ContextData)
     const navigate = useNavigate()
 
     function goBack() {
@@ -14,16 +15,37 @@ function BudgetDeleteModal(props) {
     }
 
     function deleteTransaction() {
-        console.log(deleteId, API)
-        setDeleteModal(false)
-        navigate(`/transactions`)
-        // axios.delete(`${API}/${deleteId}`)
-        // .then((respJson) => {
-        //     console.log(respJson.data)
+        console.log(`clicked check`)
+        // axios.delete(`http://localhost:4562/transactions/${deleteId}`, {
+        //     headers: {
+        //       'Content-Type': 'application/json',
+        //     }
+        //   })
+        // .then(() => {
+        //     setDeleteId("")
         //     setDeleteModal(false)
         //     navigate(`/transactions`)
         // })
-        // .catch(err => console.log(err))
+        // .catch(err => {
+        //     console.log(err)
+        //     console.log(`delete req err`)
+        // })
+        
+        axios.delete(`${API}/${deleteId}`, {
+            headers: {
+              'Content-Type': 'application/json',
+            }
+          })
+        .then((respJson) => {
+            console.log(respJson.data)
+            setDeleteId("")
+            setDeleteModal(false)
+            navigate(`/transactions`)
+        })
+        .catch(err => {
+            console.log(err)
+            console.log(`delete req err`)
+        })
     }
 
     return (
