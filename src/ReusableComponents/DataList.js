@@ -1,9 +1,9 @@
-import { handleTextInput } from "./helperFunctions";
+import { handleTextInput, convertInput } from "./helperFunctions";
 
 function DataList({value, stateVar, setFunction}) {
 
     return (
-        <label htmlFor={value}>{value}
+        <label htmlFor={value}>{convertInput(value)}: {" "}
         <input 
         list="dataList"
         id={value} 

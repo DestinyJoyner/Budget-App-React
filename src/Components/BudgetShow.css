@@ -1,7 +1,8 @@
-
+.show {
+    width: 80%;
+}
 .transacDetails {
-    border: 1px solid black;
-    border-radius: 10px;
+    border: 2px solid black;
     box-shadow: 5px 10px black;
     margin-left: auto;
     margin-right: auto;
@@ -15,12 +16,21 @@
     background-size: cover;
 }
 
-.transacDetails h3 {
-    font-size: 50px;
-    margin: 0;
+.transacDetails .pursuit-info{
     grid-column: 1;
     grid-row: 1;
-    font-family: 'Pinyon Script', cursive;
+    align-self:flex-start;
+    text-align: left;
+    justify-self: center;
+    display: block;  
+}
+.transacDetails .pursuit-info img {
+    padding: 0;
+    height: 40px;
+}
+.transacDetails .pursuit-info p {
+    font-size: 13px;
+    margin: 0;
 }
 
 .transacDetails img {
@@ -74,4 +84,58 @@
 }
 .amount span {
     border: 1px solid black;
+}
+
+/* circles */
+.show-header {
+    display: grid;
+    justify-items:center;
+    padding: 10px;
+    /* background-color: #236a7355; */
+    width: 65%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+}
+.circles {
+    width: 80%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.circles hr {
+    background-color: white;
+    width: 15%;
+    height: 2px;
+    align-self: center;
+}
+.circle1 {
+    background-color: #236a73ea;
+    border: 1px solid white;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    display: grid;
+    justify-items: center;
+}
+
+.circle1 img {
+    height: 50%;
+    margin-left: 15%;
+    margin-top: 10%;
+}
+
+.circle1:hover {
+    border: 3px solid white;
+    transform: scale(1.2);
+}
+
+.circle1 .go-back {
+    height: 50%;
+    margin-left: 0;
+    margin-right: 5%;
+}
+.circle1 .remove {
+    height: 45%;
+    margin-top: 13%;
+    margin-right: 13%;
 }

@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Nav from './Nav'
 import Footer from './Footer'
+import BudgetDeleteModal from "./BudgetDeleteModal";
 export const ContextData = createContext()
 
 function Provider({children}) {
@@ -10,6 +11,8 @@ function Provider({children}) {
     const [data, setData] = useState([])
     const [originalTotal, setOriginalTotal] = useState(5000)
     const [homeModal, setHomeModal] = useState(false)
+    const [deleteId, setDeleteId] = useState("")
+    const [deleteModal, setDeleteModal] = useState(false)
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -28,9 +31,14 @@ function Provider({children}) {
         setOriginalTotal,
         homeModal,
         setHomeModal,
+        deleteId,
+        setDeleteId,
+        deleteModal,
+        setDeleteModal,
        }}>
         <Nav />
         <Footer />
+        {deleteModal && <BudgetDeleteModal />}
         {children}
        </ContextData.Provider>
     );

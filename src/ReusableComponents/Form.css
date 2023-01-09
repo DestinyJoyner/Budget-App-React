@@ -1,5 +1,55 @@
 .form {
+    grid-column: 2;
+    border: 2px solid black;
     display: grid;
     grid-template-rows: auto;
     row-gap: 20px;
+    background-image: url('/public/blue-check.jpeg');
+    background-size: cover;
+    padding: 20px;
+    box-shadow: 8px 10px #16143d;
+    width: 90%;
 }
+
+.form h1 {
+    font-family: monospace;
+    font-size: 40px;
+    margin: 0;
+    margin-bottom: 10px;
+    text-decoration: underline;
+    color: #16143d;
+}
+
+.form label {
+    color: #16143d;
+    font-size: 26px;
+    font-family: monospace;
+}
+
+.form input {
+    width: 30%;
+    height: 20px;
+}
+.form input[type="radio"] {
+    width: auto;
+}
+.form .radioButtons {
+    display: flex;
+    justify-content: space-evenly;
+    justify-self: center;
+    background-color: #1b1850;
+    border: 2px solid #16143d;
+    border-radius: 10px;
+    width: 55%;
+}
+.form .radioButtons label {
+    color: rgb(255, 255, 255);
+}
+
+.form input[type="submit"] {
+    width: 30%;
+    height: 30px;
+    margin-right: auto;
+    margin-left: auto;
+}
+

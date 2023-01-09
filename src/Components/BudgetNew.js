@@ -30,7 +30,6 @@ function BudgetNew() {
 
     return (
         <div className='new'>
-            <h1>Add A New Transaction</h1>
             <form 
             className="form"
             onSubmit={(event) => handleSubmit(event)}>
@@ -38,7 +37,9 @@ function BudgetNew() {
                 stateVar={newTransaction}
                 setFunction={setNewTransaction}
                 type={type}
-                setType={setType} />
+                setType={setType}
+                formName={`New`}  
+                />
             </form>
         </div>
     );

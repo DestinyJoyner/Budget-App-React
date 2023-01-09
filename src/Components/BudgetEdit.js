@@ -1,9 +1,10 @@
 import { useState, useContext, useEffect } from "react";
 import { ContextData } from "./Provider";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, Link } from "react-router-dom";
 import Form from "../ReusableComponents/Form";
+import BackButton from "../ReusableComponents/BackButton";
 import { convertObjValues } from "../ReusableComponents/helperFunctions";
-
+import "./BudgetEdit.css"
 
 function BudgetEdit() {
     const {API, axios,} = useContext(ContextData)
@@ -38,7 +39,7 @@ function BudgetEdit() {
 
     return (
         <div className="edit">
-            <h1>Edit Previous Transaction</h1>
+            
             <form 
             className="form"
             onSubmit={(event) => handleSubmit(event)}>
@@ -48,10 +49,15 @@ function BudgetEdit() {
             stateVar={editTransaction}
             setFunction={setEditTransaction}
             type={type}
-            setType={setType} 
+            setType={setType}
+            formName={`Edit`} 
             />
            }
             </form>
+
+            <Link to={`/transactions/${id}`}>
+                <BackButton color={`#570116`} />
+            </Link>
             
         </div>
     );

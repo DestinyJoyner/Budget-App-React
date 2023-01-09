@@ -30,9 +30,17 @@ function convertDate(str) {
     return date.join("/");
   }
 
+  // function for converting inputted string for label/ inputs
+  function convertInput(input){
+    input.trim()
+    const newInput = `${input.charAt(0).toUpperCase()}${input.slice(1)}`
+    return newInput.split(/(?=[A-Z])/).join(` `)
+}
+
 export {
     handleTextInput,
     handleNumberInput,
     convertObjValues,
     convertDate,
+    convertInput,
 }

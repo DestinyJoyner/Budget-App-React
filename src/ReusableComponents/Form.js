@@ -5,10 +5,11 @@ import RadioButton from "./RadioButton";
 import DataList from "./DataList";
 import "./Form.css"
 
-function Form({stateVar, setFunction, type, setType}) {
-    
+function Form({stateVar, setFunction, type, setType, formName}) {
+   
     return (
         <>
+        <h1>{formName} Form</h1>
             <TextInput 
             value = {"itemName"}
             stateVar={stateVar}
@@ -42,7 +43,6 @@ function Form({stateVar, setFunction, type, setType}) {
                 stateVar={type}
                 setFunction={setType}
                 />
-
             </section>
 
             <DataList 
