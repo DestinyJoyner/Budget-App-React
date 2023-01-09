@@ -14,10 +14,14 @@ function BudgetDeleteModal(props) {
     }
 
     function deleteTransaction() {
+        console.log(deleteId, API)
+        setDeleteModal(false)
+        navigate(`/transactions`)
         // axios.delete(`${API}/${deleteId}`)
-        // .then(() => {
-        //     setDeleteModal(false)
-        //     navigate(`/transactions`)
+        // .then((respJson) => {
+        //     console.log(respJson.data)
+        //     // setDeleteModal(false)
+        //     // navigate(`/transactions`)
         // })
         // .catch(err => console.log(err))
     }

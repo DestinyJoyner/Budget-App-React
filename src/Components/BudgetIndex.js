@@ -29,7 +29,7 @@ function BudgetIndex() {
         setData(respJson.data)
         updateTotal(originalTotal, respJson.data, setTransactionTotal, setCurrentTotal)
        })
-       .catch(err => navigate("/*"))
+       .catch(err =>navigate("/*") )
     }, [])
 
     return (
