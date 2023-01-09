@@ -12,12 +12,16 @@ import back from "../assets/return-arrow.png"
 import remove from "../assets/delete-icon.png"
 import "./BudgetShow.css"
 
-
 function BudgetShow() {
-    const{API, axios} = useContext(ContextData)
+    const{API, axios, setDeleteId, setDeleteModal} = useContext(ContextData)
     const {id} = useParams()
     const navigate = useNavigate()
     const [thisTransaction, setThisTransaction] = useState({})
+
+    function promptDelete() {
+        setDeleteId(id)
+        setDeleteModal(true)
+    }
 
     useEffect(() => {
         axios.get(`${API}/${id}`)
@@ -40,7 +44,8 @@ function BudgetShow() {
                     </Link>
                     <hr></hr>
                     <button 
-                    className="circle1">
+                    className="circle1"
+                    onClick={() => {promptDelete()}}>
                         <img src={remove} alt="remove" className="remove" />
                     </button>
                 </div>
