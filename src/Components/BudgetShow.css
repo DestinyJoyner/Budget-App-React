@@ -1,5 +1,6 @@
 .show {
     width: 80%;
+    margin-top: 60px; 
 }
 .transacDetails {
     border: 2px solid black;
@@ -103,14 +104,14 @@
     justify-content: space-evenly;
 }
 .circles hr {
-    background-color: white;
-    width: 15%;
+    background-color: black;
+    width: 20%;
     height: 2px;
     align-self: center;
 }
 .circle1 {
     background-color: #236a73ea;
-    border: 1px solid white;
+    border: 2px solid black;
     border-radius: 50%;
     width: 70px;
     height: 70px;

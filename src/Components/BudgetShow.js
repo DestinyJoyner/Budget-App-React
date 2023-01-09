@@ -19,6 +19,7 @@ function BudgetShow() {
     const [thisTransaction, setThisTransaction] = useState({})
 
     function promptDelete() {
+        console.log(`prompt delete`)
         setDeleteId(id)
         setDeleteModal(true)
     }

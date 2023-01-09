@@ -4,10 +4,10 @@ import { handleTextInput } from "../ReusableComponents/helperFunctions";
 import './HomeModal.css'
 
 function HomeModal() {
-    const {total, setTotal, homeModal, setHomeModal} = useContext(ContextData)
+    const {originalTotal, setOriginalTotal, homeModal, setHomeModal} = useContext(ContextData)
 
     function handleButton(){
-        setTotal(total)
+        setOriginalTotal(originalTotal)
         setHomeModal(false)
     }
     
@@ -21,8 +21,9 @@ function HomeModal() {
         <input
         id = "initialTotal"
         type="number"
-        value={total}
-        onChange={(event) => handleTextInput(event, total, setTotal)}
+        value={originalTotal}
+        onChange={(event) => handleTextInput(event, originalTotal, setOriginalTotal)}
+        required
         />
         <button
         onClick = {() => handleButton()}

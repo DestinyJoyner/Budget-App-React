@@ -1,11 +1,12 @@
 
 .index {
+    margin-top: 60px; 
     width: 60% ;
     border: 1px solid black;
     background-color: #236a7396;
     position: relative;
     top: 40px;
-    font-family: Bank;  
+    font-family: Bank; 
 }
 
 .transactionTitles, .transaction {

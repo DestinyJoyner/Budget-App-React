@@ -9,17 +9,17 @@ export const ContextData = createContext()
 function Provider({children}) {
     const API = process.env.REACT_APP_API_URL
     const [data, setData] = useState([])
-    const [originalTotal, setOriginalTotal] = useState(5000)
+    const [originalTotal, setOriginalTotal] = useState(0)
     const [homeModal, setHomeModal] = useState(false)
     const [deleteId, setDeleteId] = useState("")
     const [deleteModal, setDeleteModal] = useState(false)
     const navigate = useNavigate()
 
-    useEffect(() => {
-        axios.get(`${API}`)
-        .then(respJson => setData(respJson.data) )
-        .catch(err => navigate("/*"))
-      },[])
+    // useEffect(() => {
+    //     axios.get(`${API}`)
+    //     .then(respJson => setData(respJson.data) )
+    //     .catch(err => navigate("/*"))
+    //   },[])
 
     return (
        <ContextData.Provider value = {{
