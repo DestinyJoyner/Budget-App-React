@@ -66,6 +66,7 @@ function BudgetIndex() {
                                 date={convertDate(date)}
                                 itemName={itemName}
                                 amount={amount}
+                                type={`transaction`}
                                 id={id} />
                             }   
                         }

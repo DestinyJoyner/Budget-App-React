@@ -1,5 +1,5 @@
 
-.pending {
+.pendingAside {
     grid-column: 2;
     border: 1px black solid;
     border-radius: 10px;
@@ -13,7 +13,7 @@
 }
 
 
-.pending section h5 {
+.pendingAside section h5 {
     margin-bottom: 7px;
     font-size: 15px;
     color: white;
@@ -24,16 +24,16 @@
     margin-top: 20px;
 }
 
-.pending section span {
+.pendingAside section span {
     font-size: 14px;
     color: blue;
 }
 
-.pending a {
+.pendingAside a {
     font-size: 11px;
     font-family: Bank;
     color: maroon ;
 }
-.pending a:hover {
+.pendingAside a:hover {
     cursor: pointer;
 }

@@ -7,8 +7,7 @@ import "./PendingTransactions.css"
 // ( Merge Sort, Selection Sort, Bubble Sort, Insertion Sort, Quicksort)
 
 function PendingTransactions({currentTotal}) {
-    const {pending, setPending, data, originalTotal} = useContext(ContextData)
-    const [pendingTotal, setPendingTotal] = useState("")
+    const {pending, setPending, data, originalTotal, pendingTotal, setPendingTotal} = useContext(ContextData)
     const [recentTransac, setRecentTransac] = useState("")
     const [pendingTransac, setPendingTransac] = useState("")
 
@@ -43,7 +42,7 @@ function PendingTransactions({currentTotal}) {
     }, [data.length])
 
     return (
-        <aside className="pending">
+        <aside className="pendingAside">
             <section>
                 <h5>Starting Balance:</h5>
                 <span>${originalTotal.toFixed(2)}</span>

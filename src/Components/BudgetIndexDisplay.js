@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 // import { convertDate } from "../ReusableComponents/helperFunctions";
-import payment from "../assets/payment-icon.png"
+import wallet from "../assets/payment-icon.png"
+import pending from "../assets/pending.png"
 
-function BudgetIndexDisplay({date, itemName, amount, id}) {
+function BudgetIndexDisplay({date, itemName, amount, id, type}) {
+    const payment = type === "transaction" ? wallet : pending
+
     return ( 
         <div className="transaction">
             <img src={payment} alt="wallet-icon" />

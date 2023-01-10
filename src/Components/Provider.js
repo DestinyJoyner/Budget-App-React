@@ -16,6 +16,7 @@ function Provider({children}) {
     const [deleteModal, setDeleteModal] = useState(false)
     // Bonus
     const [pending, setPending] = useState([])
+    const [pendingTotal, setPendingTotal] = useState("")
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -38,6 +39,8 @@ function Provider({children}) {
         setDeleteModal,
         pending, 
         setPending,
+        pendingTotal,
+        setPendingTotal,
        }}>
         <Nav />
         <Footer />

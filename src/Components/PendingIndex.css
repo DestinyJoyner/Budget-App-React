@@ -1,0 +1,72 @@
+
+.pending {
+    margin-top: 100px;
+    width: 60%;
+    background-color: #646357a0;
+    display: grid;
+    row-gap: 10px;
+}
+
+.pending h1 {
+    background-color:#5c8f3f;
+    margin-bottom: 20px;
+    height: fit-content;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin: 0;
+    font-family: Banknote;
+    justify-self: center;
+    border: 1px solid #2a2925;
+}
+
+.pending  h1 span {
+    font-family: Bank;
+    font-size: 24px;
+    color: #ece4bc;
+    letter-spacing: 3px;
+}
+
+.pending-titles {
+    /* background-color: rgb(192, 189, 189); */
+    margin: 20px;
+    font-size: 22px;
+    text-decoration: underline;
+    display: grid;
+    grid-template-columns: .3fr repeat(3,1fr);
+    color: #2a2925;
+}
+.pending-titles p:not(:first-child) {
+    margin: 0;
+    padding: 10px;
+    border-right: 1px solid #2a2925;
+    border-right-width: 2px;
+    border-bottom: 1px solid #2a2925;
+    border-bottom-width: 2px;
+    
+}
+
+.pending .transaction img {
+    height: 40px;
+}
+
+.listPending {
+    font-size: 18px;
+    background-color: #ece4bc;
+}
+
+.listPending .transaction {
+    border-bottom: 1px solid black;
+    margin: 5px 0;
+    width: 100%;
+    color: #2a2925;
+    grid-template-columns: .4fr repeat(3,1fr);
+    font-family: monospace;   
+}
+
+.listPending .transaction p, .listPending .transaction a {
+    border-right: 1px solid #2a2925;
+    height: fit-content;
+    width: 100%;
+    margin: 0;
+}
