@@ -7,12 +7,12 @@ function HomeModal() {
     const {originalTotal, setOriginalTotal, homeModal, setHomeModal} = useContext(ContextData)
 
     function handleButton(){
-        setOriginalTotal(originalTotal)
         setHomeModal(false)
+        setOriginalTotal(originalTotal)
     }
     
     return (
-        homeModal && 
+        homeModal &&
         <>
         <div className="overlay" />
         <div className="homeModal">
@@ -22,7 +22,8 @@ function HomeModal() {
         id = "initialTotal"
         type="number"
         value={originalTotal}
-        onChange={(event) => handleTextInput(event, originalTotal, setOriginalTotal)}
+        onChange={(event) => handleTextInput(event, originalTotal, setOriginalTotal)
+        }
         required
         />
         <button
