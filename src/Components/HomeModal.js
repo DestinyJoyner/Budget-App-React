@@ -4,11 +4,12 @@ import { handleTextInput } from "../ReusableComponents/helperFunctions";
 import './HomeModal.css'
 
 function HomeModal() {
-    const {originalTotal, setOriginalTotal, homeModal, setHomeModal} = useContext(ContextData)
+    const {originalTotal, setOriginalTotal, homeModal, setHomeModal, setCurrentTotal} = useContext(ContextData)
 
     function handleButton(){
         setHomeModal(false)
         setOriginalTotal(originalTotal)
+        setCurrentTotal(originalTotal)
     }
     
     return (

@@ -1,0 +1,39 @@
+
+.pendingAside {
+    grid-column: 2;
+    border: 1px black solid;
+    border-radius: 10px;
+    display: grid;
+    grid-template-rows: auto;
+    height: fit-content;
+    margin-top: 20%;
+    background-color: #6e6e6ed8;
+    /* background-color: rgba(0, 0, 0, 0.809); */
+    font-family: GreenScreen;
+}
+
+
+.pendingAside section h5 {
+    margin-bottom: 7px;
+    font-size: 15px;
+    color: white;
+   
+}
+
+.otherH5 {
+    margin-top: 20px;
+}
+
+.pendingAside section span {
+    font-size: 14px;
+    color: blue;
+}
+
+.pendingAside a {
+    font-size: 11px;
+    font-family: Bank;
+    color: maroon ;
+}
+.pendingAside a:hover {
+    cursor: pointer;
+}

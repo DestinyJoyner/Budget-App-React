@@ -5,7 +5,7 @@
     width: 100%;
     height: 60px;
     display: grid;
-    grid-template-columns: .25fr repeat(3, 1fr) .8fr;
+    grid-template-columns: .25fr repeat(3, 1fr) .4fr;
     justify-items: center;
     align-items: center;
     z-index: 500;
@@ -17,10 +17,12 @@ nav a {
     font-family: Banknote;
     font-size: 20px;
     color: white ;
+    width: fit-content;
+
 }
  
-nav img {
-    height: 30px;
+nav a img {
+    height: 40px;
 }
 
 .nav div {

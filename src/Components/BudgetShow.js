@@ -27,7 +27,7 @@ function BudgetShow() {
         axios.get(`${API}/${id}`)
         .then(respJson => setThisTransaction(respJson.data))
         .catch(err => navigate("/*"))
-    })
+    },[])
 
     return (
         <div className='show'>

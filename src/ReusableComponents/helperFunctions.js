@@ -29,6 +29,24 @@ function convertDate(str) {
     date.shift();
     return date.join("/");
   }
+// str -> "2023-01-10"
+  function dateObjCompare(str) {
+    const todaysDate = new Date(convertDate(new Date(Date()).toISOString().split(``).splice(0,10).join(``)))
+
+    const transacDate = new Date(convertDate(str))
+
+    return  transacDate > todaysDate
+                    
+  }
+
+  function updateTotal(initValue, arr, setFunction, setFunction2) {
+    let sum = 0
+    arr.forEach(({id, amount}) => {
+        if(id) sum += amount
+    })
+    setFunction(sum)
+    setFunction2(initValue + sum)
+   }
 
   // function for converting inputted string for label/ inputs
   function convertInput(input){
@@ -43,4 +61,6 @@ export {
     convertObjValues,
     convertDate,
     convertInput,
+    dateObjCompare,
+    updateTotal,
 }

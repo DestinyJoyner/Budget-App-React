@@ -4,6 +4,7 @@ import Error from '../Pages/Error'
 import Home from '../Pages/Home'
 import Index from '../Pages/Index'
 import New from '../Pages/New'
+import Pending from "../Pages/Pending";
 import Show from '../Pages/Show'
 
 function RouteComponent() {
@@ -14,6 +15,7 @@ function RouteComponent() {
             <Route path = "transactions">
                 <Route index element = {<Index />} />
                 <Route path = "new" element = {<New />} />
+                <Route path = "pending" element = {<Pending />} />
                 <Route path = ":id">
                     <Route index element = {<Show />} />
                     <Route path = "edit" element = {<Edit />} />
