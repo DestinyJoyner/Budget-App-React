@@ -7,7 +7,9 @@ import './Nav.css'
 
 
 function Nav() {
-    const {originalTotal} = useContext(ContextData)
+    const {currentTotal} = useContext(ContextData)
+    const totalColor = currentTotal < 1000 ? "orange" : "green"
+
     return (
         <nav className="nav">
             <img src={bank} alt="bank" />
@@ -15,9 +17,11 @@ function Nav() {
             <Link to = "/transactions">Transactions</Link>
             <Link to = "/transactions/new">New Transaction</Link>
             <div>
-                <span className="navSpan">Starting Budget:</span>
+                <span className="navSpan">Balance</span>
                 <img src={dollarSign} alt="dollarSign"/>
-                <span className="navTotal">${originalTotal}</span>
+                <span 
+                className="navTotal"
+                style={{backgroundColor: currentTotal < 0 ? "red" : totalColor }}>${currentTotal}</span>
                 
             </div>
         </nav>

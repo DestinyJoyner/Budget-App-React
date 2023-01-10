@@ -9,9 +9,9 @@ import './BudgetIndex.css'
 
 
 function BudgetIndex() {
-    const {axios, API, originalTotal, setData, setHomeModal, setPending} = useContext(ContextData)
+    const {axios, API, originalTotal, setData, setHomeModal, setPending, currentTotal, setCurrentTotal} = useContext(ContextData)
     const navigate = useNavigate()
-    const [currentTotal, setCurrentTotal] = useState(originalTotal)
+    // const [currentTotal, setCurrentTotal] = useState(originalTotal)
     const [transactionTotal, setTransactionTotal] = useState(0)
     const [processedTransacs, setProcessedTransacs] = useState([])
     const totalColor = currentTotal < 1000 ? "orange" : "green"

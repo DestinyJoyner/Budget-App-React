@@ -19,7 +19,10 @@ function PendingIndex() {
         <div className='pending'>
              <h1>Pending Transactions
                 <br></br>
-                <span>Pending Total: {pendingTotal}</span> 
+                <span>Pending Total: 
+                    <span
+                    style={{color: pendingTotal < 0 ? "red" : "#00ff00" }}>{" "}${pendingTotal.toFixed(2)}</span>
+                </span> 
              </h1>
              
             <section className="listPending">

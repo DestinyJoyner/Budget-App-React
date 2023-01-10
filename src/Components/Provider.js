@@ -11,6 +11,7 @@ function Provider({children}) {
     const API = process.env.REACT_APP_API_URL
     const [data, setData] = useState([])
     const [originalTotal, setOriginalTotal] = useState("")
+    const [currentTotal, setCurrentTotal] = useState(originalTotal)
     const [homeModal, setHomeModal] = useState(false)
     const [deleteId, setDeleteId] = useState("")
     const [deleteModal, setDeleteModal] = useState(false)
@@ -41,6 +42,8 @@ function Provider({children}) {
         setPending,
         pendingTotal,
         setPendingTotal,
+        currentTotal,
+        setCurrentTotal
        }}>
         <Nav />
         <Footer />
