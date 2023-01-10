@@ -6,6 +6,8 @@ import altHomeImg from "../assets/cash-fan.png"
 import homeImg from "../assets/budget-home.png"
 import dollarSign from "../assets/spin-dollar(2).gif"
 import receipt from "../assets/receipt-gif.gif"
+import linkedIn from "../assets/linkedIn-icon.png"
+import gitHub from "../assets/gitHub-icon.png"
 import "./HomePage.css"
 
 function HomePage() {
@@ -34,7 +36,15 @@ function HomePage() {
                 <img src={homeImg} alt="home" className="origHome" />
                 <img src ={altHomeImg} alt="home" className="mediaHome" />
             </section>
-            <p>Destiny J.</p>
+            <p>
+                <a href="https://github.com/DestinyJoyner" target="_blank">
+                    <img src={gitHub} alt="git-icon" className="a-tags" />
+                </a>
+                <span>Destiny J.</span>
+                <a href="https://www.linkedin.com/in/destiny-joyner-934846243/" target="_blank">
+                <img src={linkedIn} alt="linkedIn-icon" className="a-tags" />
+                </a>
+            </p>
         </div>
     );
 }

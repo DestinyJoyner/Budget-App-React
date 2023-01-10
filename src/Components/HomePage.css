@@ -14,10 +14,10 @@
 
 .home h1 {
     margin: 0;
-    margin-bottom: 20px;
     font-size: 40px; 
     grid-column: 2;
     grid-row: 1;
+    align-self: center;
 }
 
 .home .circle1 {
@@ -46,7 +46,13 @@
 
 .home p {
     grid-row: 3;
-    grid-column: span 2;
+    grid-column: span 3;
+    display: grid;
+    grid-template-columns: .5fr .2fr .5fr;
+    align-items: center;
+}
+.home p .a-tags{
+    height: 60px;
 }
 
 .homePage {
@@ -102,7 +108,7 @@
         grid-column: 3;
         align-self: center;
     }
-    .home .homeTransac {
+    .home button.circle1.homeTransac {
         grid-column: 1;
         grid-row: 2;
         align-self: center;
@@ -113,8 +119,7 @@
        margin-top: -2px;
     }
     .home p {
-        justify-self: center;
-        grid-column: 2;
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
