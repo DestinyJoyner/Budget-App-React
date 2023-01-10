@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { ContextData } from "./Provider";
 import { convertDate, dateObjCompare } from "../ReusableComponents/helperFunctions";
 import "./PendingTransactions.css"
@@ -48,9 +49,11 @@ function PendingTransactions({currentTotal}) {
                 <span>${originalTotal.toFixed(2)}</span>
             </section>
             <section>
-                <h5 className="otherH5">PendingTransactions:</h5>
+                <h5 className="otherH5">Pending Transactions:</h5>
                 <span
-                style={{color: pendingTotal < 0 ? "#8b0000" : "green"}}>{pendingTotal < 0 ? "- " : ''}${Math.abs(pendingTotal)}</span>
+                style={{color: pendingTotal < 0 ? "#8b0000" : "#00B000"}}>{pendingTotal < 0 ? "- " : ''}${Math.abs(pendingTotal)}</span>
+                <br></br>
+                <Link to="/transactions/pending">Go To Pending Transactions</Link>
             </section>
             <section>
                 <h5 className="otherH5">Recent Transaction:</h5>

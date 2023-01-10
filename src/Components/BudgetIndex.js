@@ -9,10 +9,11 @@ import './BudgetIndex.css'
 
 
 function BudgetIndex() {
-    const {axios, API, originalTotal, setOriginalTotal, data, setData, setHomeModal, setPending} = useContext(ContextData)
+    const {axios, API, originalTotal, setData, setHomeModal, setPending} = useContext(ContextData)
     const navigate = useNavigate()
     const [currentTotal, setCurrentTotal] = useState(originalTotal)
     const [transactionTotal, setTransactionTotal] = useState(0)
+    const [processedTransacs, setProcessedTransacs] = useState([])
     const totalColor = currentTotal < 1000 ? "orange" : "green"
 
     useEffect(() => {
@@ -23,6 +24,7 @@ function BudgetIndex() {
         else{
             axios.get(`${API}`)
        .then(respJson => {
+        setData(respJson.data)
         const [pendingArr, transacArr] = respJson.data.reduce((acc, obj) => {
             const whichArr = dateObjCompare(obj.date) ? 0 : 1
             acc[whichArr].push(obj)
@@ -30,7 +32,7 @@ function BudgetIndex() {
         }, [[],[]])
 
         setPending(pendingArr)
-        setData(transacArr)
+        setProcessedTransacs(transacArr)
         updateTotal(originalTotal, transacArr, setTransactionTotal, setCurrentTotal)
        })
        .catch(err => navigate("/*")
@@ -55,8 +57,8 @@ function BudgetIndex() {
                     <p>Amount</p>
                 </div>
                 {
-                    data.length > 0 && 
-                    data.map(({id, date, itemName, amount}) => {
+                    processedTransacs.length > 0 && 
+                    processedTransacs.map(({id, date, itemName, amount}) => {
                         if(id){
                             if(!dateObjCompare(date)){
                                 return <BudgetIndexDisplay
