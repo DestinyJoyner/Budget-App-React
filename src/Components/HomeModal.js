@@ -18,7 +18,7 @@ function HomeModal() {
         <div className="overlay" />
         <div className="homeModal">
         <h2>Please Enter Your Budget Amount:</h2>
-
+        <label htmlFor="initialTotal">$:{"  "}
         <input
         id = "initialTotal"
         type="number"
@@ -26,7 +26,8 @@ function HomeModal() {
         onChange={(event) => handleTextInput(event, originalTotal, setOriginalTotal)
         }
         required
-        />
+        /></label>
+        
         <button
         onClick = {() => handleButton()}
         >Let's Budget!</button>
