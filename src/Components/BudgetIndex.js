@@ -8,7 +8,6 @@ import barcode from"../assets/barcode.png"
 import './BudgetIndex.css'
 
 
-
 function BudgetIndex() {
     const {axios, API, originalTotal, setOriginalTotal, data, setData, setHomeModal, setPending} = useContext(ContextData)
     const navigate = useNavigate()
@@ -57,8 +56,11 @@ function BudgetIndex() {
                         }
                     })   
                 }
+                
                 <img src={barcode} alt="barcode" className="barcode" />
             </section>
+            <PendingTransactions
+            currentTotal={currentTotal} />
         </div>
     );
 }
