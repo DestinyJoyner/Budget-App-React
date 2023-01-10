@@ -13,10 +13,15 @@ function BudgetIndex() {
     const navigate = useNavigate()
     const [currentTotal, setCurrentTotal] = useState(originalTotal)
     const [transactionTotal, setTransactionTotal] = useState(0)
-    const totalColor = currentTotal < 1000 ? "red orange" : "green"
+    const totalColor = currentTotal < 1000 ? "orange" : "green"
 
     useEffect(() => {
-       axios.get(`${API}`)
+        if(!currentTotal){
+            setHomeModal(true)
+            navigate("/")
+        }
+        else{
+            axios.get(`${API}`)
        .then(respJson => {
         const [pendingArr, transacArr] = respJson.data.reduce((acc, obj) => {
             const whichArr = dateObjCompare(obj.date) ? 0 : 1
@@ -30,9 +35,13 @@ function BudgetIndex() {
        })
        .catch(err => navigate("/*")
     )
+            
+        }
+       
     }, [])
 
     return (
+        currentTotal &&
         <div className="index">
             <section className="listedTransactions">
                 <h1>Current Balance: ${" "}
