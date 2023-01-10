@@ -13,6 +13,7 @@ function BudgetIndex() {
     const navigate = useNavigate()
     const [currentTotal, setCurrentTotal] = useState(originalTotal)
     const [transactionTotal, setTransactionTotal] = useState(0)
+    const totalColor = currentTotal < 1000 ? "red orange" : "green"
 
     useEffect(() => {
        axios.get(`${API}`)
@@ -34,7 +35,10 @@ function BudgetIndex() {
     return (
         <div className="index">
             <section className="listedTransactions">
-                <h1>Current Balance: ${currentTotal.toFixed(2)}</h1>
+                <h1>Current Balance: ${" "}
+                    <span
+                    style={{color: currentTotal < 0 ? "red" : totalColor }}>{currentTotal.toFixed(2)}</span>
+                </h1>
                 <div className="transactionTitles">
                     <p>{""}</p>
                     <p>Date</p>
