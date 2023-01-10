@@ -1,7 +1,8 @@
 import { useContext, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { ContextData } from "../Components/Provider";
 import BudgetIndexDisplay from "./BudgetIndexDisplay";
+import BackButton from "../ReusableComponents/BackButton"
 import { convertDate } from "../ReusableComponents/helperFunctions";
 import pendingStamp from "../assets/pending-approval.png"
 import withdraw from "../assets/withdraw.png"
@@ -21,13 +22,18 @@ function PendingIndex() {
     return (
         !pendingTotal ? <h1 className="noDisplay">You Currently Have No Pending Transactions</h1> :
         <div className='pending'>
-             <h1>Pending Transactions
-                <br></br>
-                <span>Pending Total: 
+            <Link to="/transactions">
+                <BackButton color={"#5c8f3f"} />
+            </Link>
+            
+            <div className="pending-header">
+            <h1>Pending Transactions</h1>
+             <span>Pending Total: 
                     <span
                     style={{color: pendingTotal < 0 ? "red" : "#00ff00" }}>{" "}${pendingTotal.toFixed(2)}</span>
                 </span> 
-             </h1>
+            </div>
+             
             <section className="listPending">
             <div className="pending-titles">
                     <p>{""}</p>
