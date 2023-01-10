@@ -1,6 +1,6 @@
 import BudgetNew from "../Components/BudgetNew";
 
-function New(props) {
+function New() {
     return (
         <BudgetNew />
     );

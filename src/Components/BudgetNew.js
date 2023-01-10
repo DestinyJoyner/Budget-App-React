@@ -5,7 +5,6 @@ import { convertObjValues } from "../ReusableComponents/helperFunctions";
 import Form from "../ReusableComponents/Form";
 import './BudgetNew.css'
 
-
 function BudgetNew() {
     const {API, axios} = useContext(ContextData)
     const navigate = useNavigate()

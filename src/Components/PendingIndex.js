@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { ContextData } from "../Components/Provider";
 import BudgetIndexDisplay from "./BudgetIndexDisplay";
 import { convertDate } from "../ReusableComponents/helperFunctions";
@@ -28,7 +28,6 @@ function PendingIndex() {
                     style={{color: pendingTotal < 0 ? "red" : "#00ff00" }}>{" "}${pendingTotal.toFixed(2)}</span>
                 </span> 
              </h1>
-             
             <section className="listPending">
             <div className="pending-titles">
                     <p>{""}</p>
@@ -40,12 +39,12 @@ function PendingIndex() {
                     pending.length > 0 &&
                     pending.map(({id, date, itemName, amount}) => 
                     <BudgetIndexDisplay
-                                key = {id}
-                                date={convertDate(date)}
-                                itemName={itemName}
-                                amount={amount}
-                                type={`pending`}
-                                id={id} />
+                        key = {id}
+                        date={convertDate(date)}
+                        itemName={itemName}
+                        amount={amount}
+                        type={`pending`}
+                        id={id} />
                     )
                 }
                 <div className="pending-images">
@@ -53,8 +52,7 @@ function PendingIndex() {
                 <img src={pendingStamp} alt="pending-approval" className="pendingStamp" />
                 <img src={withdraw} alt="pending-approval" className="withdraw" />
                 </div>
-                <hr />
-                
+                <hr />  
             </section>  
         </div> 
     );

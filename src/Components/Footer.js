@@ -1,6 +1,6 @@
 import './Footer.css'
 
-function Footer(props) {
+function Footer() {
     return (
         <footer>
             Destiny J. FSW @ Pursuit Jan. 2023

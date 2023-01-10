@@ -8,7 +8,6 @@ import expense from "../assets/decrease-arrow.png"
 import income from "../assets/increase-arrow.png"
 import pursuitLogo from "../assets/pursuit-logo.png"
 import edit from "../assets/edit-icon.png"
-import back from "../assets/return-arrow.png"
 import remove from "../assets/delete-icon.png"
 import "./BudgetShow.css"
 
@@ -49,9 +48,7 @@ function BudgetShow() {
                         <img src={remove} alt="remove" className="remove" />
                     </button>
                 </div>
-
-            </section>
-            
+            </section>   
             {
                 Object.keys(thisTransaction).length &&
                 <div className="transacDetails">
@@ -89,19 +86,18 @@ function BudgetShow() {
                     <p>From: 
                         <span>
                             {thisTransaction.from}
-                            </span>
+                        </span>
                     </p>
                     <p>Memo: 
                         <span>
                             {thisTransaction.category}
-                            </span>
+                        </span>
                     </p>
                     </div>
 
                     <p className="receipt-id">
                         {thisTransaction.id}
-                    </p>
-                    
+                    </p>   
                 </div>
             }
         </div>

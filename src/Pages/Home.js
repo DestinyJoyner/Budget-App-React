@@ -1,6 +1,6 @@
 import HomePage from "../Components/HomePage";
 
-function Home(props) {
+function Home() {
     return (
         <HomePage />
     );

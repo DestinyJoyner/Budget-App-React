@@ -53,9 +53,7 @@ function Form({stateVar, setFunction, type, setType, formName}) {
 
             <input
             className="submitButton"
-            type="submit" />
-
-            
+            type="submit" /> 
         </>
     );
 }

@@ -4,10 +4,9 @@ import { useNavigate } from "react-router-dom";
 import check from "../assets/checkmark.png"
 import close from "../assets/close-x.png"
 import "./BudgetDeleteModal.css"
-import axios from "axios";
 
-function BudgetDeleteModal(props) {
-    const { API, deleteId, setDeleteModal, setDeleteId} = useContext(ContextData)
+function BudgetDeleteModal() {
+    const { API, axios, deleteId, setDeleteModal} = useContext(ContextData)
     const navigate = useNavigate()
 
     function goBack() {
@@ -44,11 +43,8 @@ function BudgetDeleteModal(props) {
                         <img src={close} alt="close" />
                 </button>
             </span> 
-
         </div>
         </>
-
-        
     );
 }
 

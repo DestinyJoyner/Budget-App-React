@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-// import { convertDate } from "../ReusableComponents/helperFunctions";
 import wallet from "../assets/payment-icon.png"
 import pending from "../assets/pending.png"
 
@@ -15,7 +14,9 @@ function BudgetIndexDisplay({date, itemName, amount, id, type}) {
             <Link to={`/transactions/${id}`}><p>{itemName}</p></Link>
             
             <p
-            style={{color: amount < 0 ? "red" : "green"}}>{amount < 0 ? "- " : ''}${Math.abs(amount).toFixed(2)}</p>
+            style={{color: amount < 0 ? "red" : "green"}}>
+                {amount < 0 ? "- " : ''}${Math.abs(amount).toFixed(2)}
+            </p>
         </div>
     );
 }

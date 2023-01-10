@@ -7,11 +7,10 @@ import { convertDate, dateObjCompare, updateTotal } from "../ReusableComponents/
 import barcode from"../assets/barcode.png"
 import './BudgetIndex.css'
 
-
 function BudgetIndex() {
     const {axios, API, originalTotal, setData, setHomeModal, setPending, currentTotal, setCurrentTotal} = useContext(ContextData)
     const navigate = useNavigate()
-    // const [currentTotal, setCurrentTotal] = useState(originalTotal)
+
     const [transactionTotal, setTransactionTotal] = useState(0)
     const [processedTransacs, setProcessedTransacs] = useState([])
     const totalColor = currentTotal < 1000 ? "orange" : "green"
@@ -21,25 +20,22 @@ function BudgetIndex() {
             setHomeModal(true)
             navigate("/")
         }
-        else{
+        else {
             axios.get(`${API}`)
-       .then(respJson => {
-        setData(respJson.data)
-        const [pendingArr, transacArr] = respJson.data.reduce((acc, obj) => {
-            const whichArr = dateObjCompare(obj.date) ? 0 : 1
-            acc[whichArr].push(obj)
-            return acc
-        }, [[],[]])
+            .then(respJson => {
+            setData(respJson.data)
+            const [pendingArr, transacArr] = respJson.data.reduce((acc, obj) => {
+                const whichArr = dateObjCompare(obj.date) ? 0 : 1
+                acc[whichArr].push(obj)
+                return acc
+                }, [[],[]])
 
-        setPending(pendingArr)
-        setProcessedTransacs(transacArr)
-        updateTotal(originalTotal, transacArr, setTransactionTotal, setCurrentTotal)
-       })
-       .catch(err => navigate("/*")
-    )
-            
+            setPending(pendingArr)
+            setProcessedTransacs(transacArr)
+            updateTotal(originalTotal, transacArr, setTransactionTotal, setCurrentTotal)
+            })
+            .catch(err => navigate("/*"))     
         }
-       
     }, [])
 
     return (
@@ -72,11 +68,14 @@ function BudgetIndex() {
                         }
                     })   
                 }
-                
+                <p className="transacSummary">
+                    <span>Num. of Transactions:{"  "}{processedTransacs.length - 1}</span>
+                    <span>Amount:{transactionTotal < 0 ? " - " : ' '}${Math.abs(transactionTotal).toFixed(2)}</span>
+                </p>
                 <img src={barcode} alt="barcode" className="barcode" />
             </section>
-            <PendingTransactions
-            currentTotal={currentTotal} />
+
+            <PendingTransactions currentTotal={currentTotal} />
         </div>
     );
 }

@@ -39,7 +39,6 @@ function BudgetEdit() {
 
     return (
         <div className="edit">
-            
             <form 
             className="form"
             onSubmit={(event) => handleSubmit(event)}>
@@ -54,11 +53,9 @@ function BudgetEdit() {
             />
            }
             </form>
-
             <Link to={`/transactions/${id}`}>
                 <BackButton color={`#570116`} />
-            </Link>
-            
+            </Link>   
         </div>
     );
 }

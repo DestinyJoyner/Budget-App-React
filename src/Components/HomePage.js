@@ -1,13 +1,16 @@
-import { useContext } from "react";
+import { useContext , useEffect } from "react";
 import { ContextData } from "./Provider";
 import HomeModal from "./HomeModal";
-import "./HomePage.css"
 import homeImg from "../assets/budget-home.png"
 import dollarSign from "../assets/spin-dollar(2).gif"
+import "./HomePage.css"
 
 function HomePage() {
-    const {setHomeModal} = useContext(ContextData)
+    const {setHomeModal, originalTotal} = useContext(ContextData)
 
+    useEffect(() => {
+        if(!originalTotal) setHomeModal(true)
+    },[])
 
     return (
         <div className='home'>
@@ -16,7 +19,7 @@ function HomePage() {
             <button 
             className="circle1"
             onClick={() => setHomeModal(true)}>
-                    <img src={dollarSign} alt="dollar" />
+                <img src={dollarSign} alt="dollar" />
             </button>
             <section className="homePage">
                 <img src={homeImg} alt="home" />

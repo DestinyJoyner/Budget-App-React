@@ -9,8 +9,8 @@
     justify-items: center;
     align-items: center;
     z-index: 500;
-    /* background-color: #85bb65; */
     background-color: #236a73;
+    text-align: center;
 }
 
 nav a {
@@ -35,6 +35,10 @@ nav a img {
 .nav div img {
     justify-self: right;
     margin-right: 4px;
+}
+
+.nav-balance {
+    justify-self: left;
 }
 
 .navSpan {

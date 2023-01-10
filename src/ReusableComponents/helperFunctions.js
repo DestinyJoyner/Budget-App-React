@@ -55,6 +55,26 @@ function convertDate(str) {
     return newInput.split(/(?=[A-Z])/).join(` `)
 }
 
+// Bonus Functions
+function sortTransacDate(arr) {
+    const sortArr = arr.filter(({date, id})=> {
+        if(id) return !dateObjCompare(date)
+    })
+
+    sortArr.sort((a, b) => 
+    new Date(convertDate(a.date)) < new Date(convertDate(b.date)) ? -1 : 1 || 0
+    )
+
+    return sortArr.reverse()[0]
+}
+
+function sortPending(arr) {
+    arr.sort((a, b) => 
+    new Date(convertDate(a.date)) < new Date(convertDate(b.date)) ? -1 : 1 || 0
+    )
+    return arr[0]
+}
+
 export {
     handleTextInput,
     handleNumberInput,
@@ -63,4 +83,6 @@ export {
     convertInput,
     dateObjCompare,
     updateTotal,
+    sortTransacDate,
+    sortPending,
 }
