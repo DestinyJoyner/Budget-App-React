@@ -4,14 +4,17 @@ import { ContextData } from "./Provider";
 import BudgetIndexDisplay from "./BudgetIndexDisplay";
 import barcode from"../assets/barcode.png"
 import './BudgetIndex.css'
+import { convertDate, dateObjCompare } from "../ReusableComponents/helperFunctions";
 
 
 
 function BudgetIndex() {
-    const {axios, API, originalTotal, setOriginalTotal, data, setData} = useContext(ContextData)
+    const {axios, API, originalTotal, setOriginalTotal, data, setData, setHomeModal} = useContext(ContextData)
     const navigate = useNavigate()
     const [currentTotal, setCurrentTotal] = useState(originalTotal)
     const [transactionTotal, setTransactionTotal] = useState(0)
+
+    const [pending, setPending] = useState([])
     
    function updateTotal(initValue, arr, setFunction, setFunction2) {
     let sum = 0
@@ -36,7 +39,7 @@ function BudgetIndex() {
     return (
         <div className="index">
             <section className="listedTransactions">
-                <h1>Current Balance: ${currentTotal.toFixed(2)}</h1>
+                <h1>Current Balance: ${originalTotal ? currentTotal.toFixed(2): setHomeModal(true)}</h1>
                 <div className="transactionTitles">
                     <p>{""}</p>
                     <p>Date</p>
@@ -46,13 +49,21 @@ function BudgetIndex() {
                 {
                     data.length > 0 && 
                     data.map(({id, date, itemName, amount}) => {
+                       
                         if(id){
-                            return <BudgetIndexDisplay
-                            key = {id}
-                            date={date}
-                            itemName={itemName}
-                            amount={amount}
-                            id={id} />
+                            if(dateObjCompare(date)){
+                                // setPending([...pending, id])
+                                console.log(id)
+                            }
+                            else{
+                                return <BudgetIndexDisplay
+                                key = {id}
+                                date={convertDate(date)}
+                                itemName={itemName}
+                                amount={amount}
+                                id={id} />
+                            }
+                            
                         }
                     })
                 }

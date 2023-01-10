@@ -37,6 +37,7 @@ function Provider({children}) {
        }}>
         <Nav />
         <Footer />
+        {homeModal && <HomeModal />}
         {deleteModal && <BudgetDeleteModal />}
         {children}
        </ContextData.Provider>

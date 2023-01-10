@@ -29,6 +29,15 @@ function convertDate(str) {
     date.shift();
     return date.join("/");
   }
+// str -> "2023-01-10"
+  function dateObjCompare(str) {
+    const todaysDate = new Date(convertDate(new Date(Date()).toISOString().split(``).splice(0,10).join(``)))
+
+    const transacDate = new Date(convertDate(str))
+
+    return  transacDate > todaysDate
+                    
+  }
 
   // function for converting inputted string for label/ inputs
   function convertInput(input){
@@ -43,4 +52,5 @@ export {
     convertObjValues,
     convertDate,
     convertInput,
+    dateObjCompare
 }
