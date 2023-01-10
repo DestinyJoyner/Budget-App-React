@@ -39,6 +39,15 @@ function convertDate(str) {
                     
   }
 
+  function updateTotal(initValue, arr, setFunction, setFunction2) {
+    let sum = 0
+    arr.forEach(({id, amount}) => {
+        if(id) sum += amount
+    })
+    setFunction(sum)
+    setFunction2(initValue + sum)
+   }
+
   // function for converting inputted string for label/ inputs
   function convertInput(input){
     input.trim()
@@ -52,5 +61,6 @@ export {
     convertObjValues,
     convertDate,
     convertInput,
-    dateObjCompare
+    dateObjCompare,
+    updateTotal,
 }

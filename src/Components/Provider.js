@@ -14,10 +14,12 @@ function Provider({children}) {
     const [homeModal, setHomeModal] = useState(false)
     const [deleteId, setDeleteId] = useState("")
     const [deleteModal, setDeleteModal] = useState(false)
+    // Bonus
+    const [pending, setPending] = useState([])
     const navigate = useNavigate()
 
     useEffect(() => {
-        if(!originalTotal) setHomeModal(true)
+        if(originalTotal === undefined) setHomeModal(true)
     },[])
 
     return (
@@ -34,6 +36,8 @@ function Provider({children}) {
         setDeleteId,
         deleteModal,
         setDeleteModal,
+        pending, 
+        setPending,
        }}>
         <Nav />
         <Footer />
