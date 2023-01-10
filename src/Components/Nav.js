@@ -12,9 +12,9 @@ function Nav() {
 
     return (
         <nav className="nav">
-            <img src={bank} alt="bank" />
-            <Link to = "/">Home</Link>
+            <Link to = "/"><img src={bank} alt="bank" /></Link>
             <Link to = "/transactions">Transactions</Link>
+            <Link to = "/transactions/pending">Pending Transactions</Link>
             <Link to = "/transactions/new">New Transaction</Link>
             <div>
                 <span className="navSpan">Balance</span>

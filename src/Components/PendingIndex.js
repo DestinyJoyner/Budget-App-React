@@ -3,6 +3,9 @@ import { useParams, Link } from "react-router-dom";
 import { ContextData } from "../Components/Provider";
 import BudgetIndexDisplay from "./BudgetIndexDisplay";
 import { convertDate } from "../ReusableComponents/helperFunctions";
+import pendingStamp from "../assets/pending-approval.png"
+import withdraw from "../assets/withdraw.png"
+import card from "../assets/credit-card.png"
 import "./PendingIndex.css"
 
 function PendingIndex() {
@@ -44,8 +47,14 @@ function PendingIndex() {
                                 id={id} />
                     )
                 }
-
-            </section>
+                <div className="pending-images">
+                <img src={card} alt="pending-approval" className="withdraw" />
+                <img src={pendingStamp} alt="pending-approval" className="pendingStamp" />
+                <img src={withdraw} alt="pending-approval" className="withdraw" />
+                </div>
+                <hr />
+                
+            </section>  
         </div>
     );
 }

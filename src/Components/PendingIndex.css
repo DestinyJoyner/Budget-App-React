@@ -70,3 +70,27 @@
     width: 100%;
     margin: 0;
 }
+
+.pending-images{
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    justify-items: center;
+    align-items: center;
+}
+.pending-images .withdraw {
+    height: 60px;
+}
+.pending .pendingStamp {
+    height: 100px;
+    justify-self: center;
+    align-self: baseline;
+    margin: 0;
+}
+
+.listPending hr {
+    border: 2px dotted #2a2925;
+    border-width: 3px;
+}
