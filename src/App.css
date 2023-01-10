@@ -12,13 +12,20 @@
     max-height: auto; */
 }
 
-.index, .new, .show, .edit, .home, .pending{
+.index, .new, .show, .edit, .home, .pending, .noDisplay{
     /* margin-top: 60px; */
     padding: 10px ;
     /* width: 70%; */
     margin-left: auto;
     margin-right: auto;
     text-align: center;  
+}
+
+.noDisplay {
+    margin-top: 100px ;
+    background-color: #ece4bc;
+    color: #2a2925;
+    width: 80%;
 }
 
 .edit, .new {

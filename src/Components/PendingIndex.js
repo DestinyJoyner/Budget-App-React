@@ -16,9 +16,10 @@ function PendingIndex() {
         pending.sort((a, b) => 
         new Date(convertDate(a.date)) < new Date(convertDate(b.date)) ? -1 : 1 || 0
         )
-    }, [pending.length])
+    }, [])
 
     return (
+        !pendingTotal ? <h1 className="noDisplay">You Currently Have No Pending Transactions</h1> :
         <div className='pending'>
              <h1>Pending Transactions
                 <br></br>
@@ -55,7 +56,7 @@ function PendingIndex() {
                 <hr />
                 
             </section>  
-        </div>
+        </div> 
     );
 }
 

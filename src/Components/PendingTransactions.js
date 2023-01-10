@@ -39,7 +39,7 @@ function PendingTransactions({currentTotal}) {
         setPendingTotal(pendingSum)
         setRecentTransac(sortTransacDate(data))
         setPendingTransac(sortPending(pending))
-    }, [data.length])
+    }, [pending.length])
 
     return (
         <aside className="pendingAside">
