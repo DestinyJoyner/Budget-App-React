@@ -6,7 +6,7 @@ import "./PendingTransactions.css"
 // ( Merge Sort, Selection Sort, Bubble Sort, Insertion Sort, Quicksort)
 
 function PendingTransactions({currentTotal}) {
-    const {pending, setPending, data} = useContext(ContextData)
+    const {pending, setPending, data, originalTotal} = useContext(ContextData)
     const [pendingTotal, setPendingTotal] = useState("")
     const [recentTransac, setRecentTransac] = useState("")
     const [pendingTransac, setPendingTransac] = useState("")
@@ -44,14 +44,16 @@ function PendingTransactions({currentTotal}) {
     return (
         <aside className="pending">
             <section>
-                <h5>Current Balance: ${currentTotal.toFixed(2)}</h5>
+                <h5>Starting Balance:</h5>
+                <span>${originalTotal.toFixed(2)}</span>
             </section>
             <section>
-                <h5>PendingTransactions:</h5>
-                <span>{pendingTotal}</span>
+                <h5 className="otherH5">PendingTransactions:</h5>
+                <span
+                style={{color: pendingTotal < 0 ? "#8b0000" : "green"}}>{pendingTotal < 0 ? "- " : ''}${Math.abs(pendingTotal)}</span>
             </section>
             <section>
-                <h5>Recent Transaction:</h5>
+                <h5 className="otherH5">Recent Transaction:</h5>
                 <span>
                     {recentTransac ? 
                     <> 
@@ -62,7 +64,8 @@ function PendingTransactions({currentTotal}) {
                 </span>
             </section>
             <section>
-                <h5>Upcoming Transaction:</h5>
+                <h5 className="otherH5">Upcoming Transaction:</h5>
+                <span>
                 {
                     pendingTransac ?
                     <>
@@ -71,6 +74,7 @@ function PendingTransactions({currentTotal}) {
                     </> : "none"  
                     
                 }
+                </span>
             </section>
             
         </aside>

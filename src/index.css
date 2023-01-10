@@ -1,7 +1,7 @@
-/* @font-face {
-    font-family: "18Century";
-    src: local("18Century"), url("./Fonts/18thCentury.ttf") format("truetype");
-} */
+@font-face {
+    font-family: "GreenScreen";
+    src: local("GreenScreen"), url("./Fonts/greenscreen.ttf") format("truetype");
+}
 @font-face {
     font-family: "Checkbook";
     src: local("Checkbook"), url("./Fonts/checkbook.TTF") format("truetype");
