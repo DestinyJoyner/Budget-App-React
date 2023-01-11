@@ -32,6 +32,9 @@ function BudgetShow() {
         <div className='show'>
             <section className="show-header">
                 <div className="circles">
+                    <Link to={`/transactions/`} className="show-back">
+                       <BackButton color={`#1b43af`} />
+                    </Link>
                     <Link to={`/transactions/`}>
                        <BackButton color={`#236a73`} />
                     </Link>
@@ -52,6 +55,7 @@ function BudgetShow() {
             {
                 Object.keys(thisTransaction).length &&
                 <div className="transacDetails">
+                    <h1 className="hidden-show">Guest Check</h1>
                     <div className ="pursuit-info">
                         <img src={pursuitLogo} alt="pursuit-log"/>
                         <p>47-10 Austell Pl <br></br>2nd floor, <br></br>Long Island City, NY 11101</p>
@@ -83,18 +87,19 @@ function BudgetShow() {
                             {toWords(Math.abs(thisTransaction.amount))}
                         </span> Dollars
                     </p>
-                    <p>From: 
+                    <p className="from">From: 
                         <span>
                             {thisTransaction.from}
                         </span>
                     </p>
-                    <p>Memo: 
+                    <p className="memo">Memo: 
                         <span>
                             {thisTransaction.category}
                         </span>
                     </p>
                     </div>
-
+                    <p className="place-holder"></p>
+                    
                     <p className="receipt-id">
                         {thisTransaction.id}
                     </p>   
