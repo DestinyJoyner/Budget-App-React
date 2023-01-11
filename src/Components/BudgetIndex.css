@@ -86,11 +86,11 @@
         /* visibility: hidden; */
         display: none;
     }
-    .transaction {
+    .listedTransactions .transaction {
         grid-template-columns: .8fr .4fr;
         height: fit-content;
     }
-   .transaction a {
+   .listedTransactions .transaction a {
     grid-column: 1;
    }
    .listedTransactions h1 {

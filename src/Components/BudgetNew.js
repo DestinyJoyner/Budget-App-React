@@ -1,8 +1,9 @@
 import { useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { ContextData } from "./Provider";
 import { convertObjValues } from "../ReusableComponents/helperFunctions";
 import Form from "../ReusableComponents/Form";
+import BackButton from "../ReusableComponents/BackButton"
 import './BudgetNew.css'
 
 function BudgetNew() {
@@ -29,6 +30,9 @@ function BudgetNew() {
 
     return (
         <div className='new'>
+            <Link to="/transactions">
+                <BackButton color={"#16143d"} />
+            </Link>
             <form 
             className="form"
             onSubmit={(event) => handleSubmit(event)}>

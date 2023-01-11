@@ -1,30 +1,45 @@
 
 .pending {
     margin-top: 100px;
-    width: 60%;
+    width: 80%;
     background-color: #646357a0;
     display: grid;
+    grid-template-columns: 92% 8%;
     row-gap: 10px;
 }
 
-.pending h1 {
+.pending-header {
+    grid-column: 1;
+    grid-row: 1;
     background-color:#5c8f3f;
-    margin-bottom: 20px;
-    height: fit-content;
-    width: 70%;
+    margin-bottom: 10px;
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
-    margin: 0;
     font-family: Banknote;
     justify-self: center;
     border: 1px solid #2a2925;
 }
 
-.pending  h1 span {
+.pending-header h1 {
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+}
+.pending-header span {
     font-family: Bank;
-    font-size: 24px;
-    color: #ece4bc;
-    letter-spacing: 3px;
+    font-size: 20px;
+    color: #ece4bc; 
+}
+
+.pending a  {
+    grid-column: 2;
+    grid-row: 1/3;
+    align-self: center;
+    margin-left: -50%;
+}
+.pending a:hover {
+    cursor: pointer;
 }
 
 .pending-titles {
@@ -53,6 +68,10 @@
 .listPending {
     font-size: 18px;
     background-color: #ece4bc;
+    grid-column: 1;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .listPending .transaction {
@@ -93,4 +112,44 @@
 .listPending hr {
     border: 2px dotted #2a2925;
     border-width: 3px;
+}
+
+/* MEDIA QUERY */
+@media (max-width: 780px) {
+    .listPending .pending-titles p:first-child {
+        display: none;
+    }
+    .listPending .pending-titles, .listPending .transaction {
+        grid-template-columns: repeat(3,1fr);
+    }
+    .listPending .transaction img {
+        display: none;
+    }
+    .listPending .transaction p:nth-child(2) {
+        display: unset;
+    }
+    .listPending .pending-images img:nth-child(1), .listPending .pending-images img:nth-child(3) {
+        display: none;
+    }
+    .listPending .pending-images img {
+        grid-column: span 3;
+    }
+    .pending-header  {
+        display: flex;
+        height: fit-content;
+    }
+    .pending-header h1 {
+        font-size: 22px;
+    }
+    .pending-header span {
+        font-size: 18px;
+        height: fit-content;
+        align-self: center;
+    }
+    .pending {
+        width: 90%;
+        row-gap: 0;
+    }
+    
+
 }

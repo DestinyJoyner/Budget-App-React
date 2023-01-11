@@ -7,6 +7,7 @@
     right: 0;
     background-image: url('/public/treasury-background.jpg.webp');
     background-size: cover;
+    overflow-y: scroll;
 }
 
 .index, .new, .show, .edit, .home, .pending, .noDisplay{
@@ -28,4 +29,5 @@
     display: grid;
     grid-template-columns: .1fr 1fr .1fr;
     grid-template-rows: 1fr;
+    min-width: 700px;
 }

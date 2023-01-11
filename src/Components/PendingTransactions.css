@@ -37,3 +37,24 @@
 .pendingAside a:hover {
     cursor: pointer;
 }
+
+/* MEDIA QUERY */
+@media (max-width: 780px) {
+    .pendingAside {
+        grid-column: 1;
+        grid-row: 1;
+        margin-top: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        border: none;
+        border-radius: 0;
+        background-image: url('/public/crumbled-paper.jpg');
+    }
+    .pendingAside section:nth-child(3), .pendingAside section:nth-child(4) {
+        display: none;
+    }
+    .pendingAside section h5 {
+        color: black;
+    }
+}

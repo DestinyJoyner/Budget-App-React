@@ -1,5 +1,5 @@
 .show {
-    width: 80%;
+    width: 85%;
     margin-top: 60px; 
 }
 .transacDetails {
@@ -92,12 +92,12 @@
     display: grid;
     justify-items:center;
     padding: 10px;
-    /* background-color: #236a7355; */
+    height: fit-content;
     width: 65%;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 15px;
 }
+
 .circles {
     width: 80%;
     display: flex;
@@ -139,4 +139,128 @@
     height: 45%;
     margin-top: 13%;
     margin-right: 13%;
+}
+
+.hidden-show, .show-back {
+    display: none;
+}
+
+/* MEDIA QUERY */
+@media (max-width: 840px) {
+    .show {
+        display: grid;
+        grid-template-columns: .2fr 1.5fr;
+    }
+    .show-header {
+        grid-column: 1;
+        height: 90%;
+        justify-items: right;
+    }
+    .show-header .circles hr {
+        display: none;
+    }
+    .show-header .circles {
+       flex-direction: column;
+    }
+    .show-header .circles a:nth-child(2)  {
+        display: none;
+    }
+    .show-back {
+        display: unset;
+    }
+    .show-header .circles a div.circle1, .circles button{
+        background-color: #1b43af;
+    }
+    .transacDetails {
+        grid-column: 2;
+        background-image: url('/public/lined-paper.png');
+        background-color: #c8d7ec;
+        color: #1b43af;
+        width: 70%;
+        box-shadow: none;
+        column-gap: 5px;
+        height: 110%;
+    }
+    .transacDetails img {
+        grid-column: 3;
+        grid-row: 6/9 ;
+    }
+    .transacDetails p.date {
+        grid-column: 1;
+        grid-row: 1;
+        flex-direction: column;
+        justify-content: center;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .transacDetails p span {
+        border-bottom: 1px solid #8c9adc;
+    }
+    .transacDetails div.pursuit-info {
+        display: none;
+    }
+    .transacDetails p.receipt-id {
+        grid-row: 1;
+        grid-column: 2/4;
+        align-self: center;
+        width: 100%;
+        color: red;
+    }
+    .transacDetails p.for {
+        grid-row: 3/5;
+        grid-column: span 3;
+        flex-direction: column;
+        row-gap: 30px;
+        text-align: left; 
+    }
+    .transacDetails p.for span {
+       margin-left: auto;
+       margin-right: auto;
+        
+    }
+    .transacDetails p.amount {
+        grid-row: 9;
+        grid-column: 3;
+    }
+    .transacDetails .transac-data p:first-child{
+        display: none;
+    }
+    .transacDetails .transac-data  {
+        grid-column: 1/3;
+        grid-row: 8;
+    }
+    .transacDetails p {
+        font-family: Britanic;
+        border:1px solid #1b43af;
+        border-top: none;
+    }
+    .hidden-show {
+        display: unset;
+        grid-column: span 3;
+        grid-row: 2;
+        width: fit-content;
+        height: 60px;
+        font-size: 50px;
+        margin: 0 auto;
+    }
+    .transacDetails p.place-holder {
+        grid-column: 1/3;
+        grid-row: 5;
+        height: 60px;
+        border: none;
+    }
+    
+}
+
+@media (max-width: 590px) {
+    .transacDetails{
+        width: 90%;
+    }
+    .hidden-show {
+        font-size: 40px;
+    }
+    .show-header {
+        justify-items: left;
+    }
 }
