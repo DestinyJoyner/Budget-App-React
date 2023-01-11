@@ -10,7 +10,7 @@
     overflow-y: scroll;
 }
 
-.index, .new, .show, .edit, .home, .pending, .noDisplay{
+.index, .new, .show, .edit, .home, .pending, .noDisplay, .error{
     padding: 10px ;
     margin-left: auto;
     margin-right: auto;

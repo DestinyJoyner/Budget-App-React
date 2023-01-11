@@ -1,10 +1,8 @@
-import React from 'react';
+import ErrorPage from "../Components/ErrorPage";
 
-function Error(props) {
+function Error() {
     return (
-        <div>
-            Error
-        </div>
+        <ErrorPage />
     );
 }
 

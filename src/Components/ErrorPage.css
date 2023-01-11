@@ -1,0 +1,62 @@
+/* Gold effect:
+    https://codingartistweb.com/2020/01/gold-text-effect-css-text-effect/
+*/
+.error {
+    margin: 100px;
+    font-family: Bank;
+}
+.error-text h1 {
+    margin-bottom: 65px;
+    font-size: 42px;
+   background-image: linear-gradient(
+	to right,
+	#462523 0,
+       	#cb9b51 22%, 
+	#f6e27a 45%,
+	#f6f2c0 50%,
+	#f6e27a 55%,
+	#cb9b51 78%,
+	#462523 100%
+	);
+   color:transparent;
+   -webkit-background-clip:text;
+}
+
+.error-text {
+    position: fixed;
+    top: 20%;
+    left: 22%;
+}
+
+.error-text button {
+    height: 45px;
+    width: 250px;
+    font-family: Bank;
+    font-size: 18px;
+    background-image: linear-gradient(
+	to right,
+	#462523 0,
+       	#cb9b51 22%, 
+	#f6e27a 45%,
+	#f6f2c0 50%,
+	#f6e27a 55%,
+	#cb9b51 78%,
+	#462523 100%
+	);
+   color:black;
+}
+
+.error-text button:hover {
+    cursor: pointer;
+    transform: scale(1.4);
+}
+
+.error img {
+    height: 400px;
+    position: fixed;
+    top: 18%;
+    left: 20%;
+    background-color: #97C6B1;
+    border-radius: 18px;
+    box-shadow: 15px 15px rgba(0, 0, 0, 0.761);
+}
